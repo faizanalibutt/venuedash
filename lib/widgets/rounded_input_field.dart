@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:venuedash2/constants.dart';
 import 'package:venuedash2/widgets/text_field_container.dart';
-
+import '../utils/constants.dart';
 
 class RoundedInputField extends StatelessWidget {
-  final String? hintText;
-  final IconData icon;
   final ValueChanged<String>? onChanged;
+  final TextInputType textInputType;
+  final bool focus;
+  final Color color;
+  final Color textColor;
+  final Color cursorColor;
+
   const RoundedInputField({
     Key? key,
-    this.hintText,
-    this.icon = Icons.person,
     this.onChanged,
+    this.focus = false,
+    required this.textInputType,
+    this.color = Colors.white,
+    this.textColor = kWhite700Color,
+    this.cursorColor = Colors.white,
   }) : super(key: key);
 
   @override
@@ -19,16 +25,15 @@ class RoundedInputField extends StatelessWidget {
     return TextFieldContainer(
       child: TextField(
         onChanged: onChanged,
-        cursorColor: kPrimaryColor,
-        decoration: InputDecoration(
-          icon: Icon(
-            icon,
-            color: kPrimaryColor,
-          ),
-          hintText: hintText,
+        cursorColor: cursorColor,
+        keyboardType: textInputType,
+        autofocus: focus,
+        style: TextStyle(color: textColor),
+        decoration: const InputDecoration(
           border: InputBorder.none,
         ),
       ),
+      borderColor: color,
     );
   }
 }

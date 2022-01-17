@@ -2,12 +2,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:venuedash2/utils/constants.dart';
 
-class OutlinedBorderButton extends StatelessWidget {
+class OutlinedBorderButtonLong extends StatelessWidget {
   final String text;
   final VoidCallback press;
   final Color color, textColor;
   final String imgName;
-  const OutlinedBorderButton({
+  const OutlinedBorderButtonLong({
     Key? key,
     required this.text,
     required this.press,
@@ -19,9 +19,8 @@ class OutlinedBorderButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5),
-      width: size.width * 0.42,
+    return SizedBox(
+      width: size.width * 0.85,
       child: ClipRRect(
         child: outlinedBorderButton(context),
       ),
@@ -41,7 +40,8 @@ class OutlinedBorderButton extends StatelessWidget {
           ),
           AutoSizeText(
             text,
-            style: TextStyle(color: textColor, fontSize: 12),
+            style: TextStyle(
+                color: textColor, fontSize: 12, fontWeight: FontWeight.w300),
             minFontSize: 8,
           )
         ],

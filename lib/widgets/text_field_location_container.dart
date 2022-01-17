@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TextFieldContainer extends StatelessWidget {
+class TextFieldLocationContainer extends StatelessWidget {
   final Widget child;
   final Color borderColor;
 
-  const TextFieldContainer({
+  const TextFieldLocationContainer({
     Key? key,
-    required this.child, this.borderColor = Colors.white,
+    required this.child,
+    this.borderColor = Colors.white,
   }) : super(key: key);
 
   @override
@@ -14,14 +15,17 @@ class TextFieldContainer extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.only(bottom: 20, top: 3),
-      padding: const EdgeInsets.only(left: 22.0, right: 5.0),
       width: size.width * 0.85,
       height: 50,
       alignment: Alignment.center,
-      decoration: BoxDecoration(
-        border: Border.all(color: borderColor, width: 1.0),
-        borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-      ),
+      decoration: const BoxDecoration(boxShadow: [
+        BoxShadow(
+          color: Colors.black12,
+          spreadRadius: 4,
+          blurRadius: 14,
+          offset: Offset(0, 3),
+        )
+      ]),
       child: child,
     );
   }

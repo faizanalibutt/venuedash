@@ -1,8 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:venuedash2/routers/login_page.dart';
+import 'package:venuedash2/routers/registration_page.dart';
+import 'package:venuedash2/utils/constants.dart';
 import 'package:venuedash2/widgets/outlined_border_button.dart';
-import 'package:venuedash2/constants.dart';
 import 'package:venuedash2/widgets/rounded_button.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -63,24 +65,32 @@ class WelcomePage extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         )),
                     SizedBox(
-                        height: size.height * .15,
+                        height: size.height * .14,
                         child: SingleChildScrollView(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               OutlinedBorderButton(
                                   text: "Register",
-                                  press: () {},
+                                  press: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const RegistrationPage())),
                                   imgName:
                                       "assets/graphics/welcome_register_icon.png"),
                               const SizedBox(width: 10),
                               RoundedButton(
                                   text: "Login",
-                                  press: () {},
+                                  press: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const LoginPage())),
                                   color: Colors.white,
                                   textColor: kPrimaryColor,
                                   imgName:
-                                      "assets/graphics/welcome_login_icon.png")
+                                      "assets/graphics/welcome_login_icon.png"),
                             ],
                           ),
                         )),
