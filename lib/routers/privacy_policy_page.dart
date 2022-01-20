@@ -23,8 +23,8 @@ class PrivacyPolicyPage extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: Color(0x2E000000),
-                    spreadRadius: 4,
-                    blurRadius: 20,
+                    spreadRadius: 0,
+                    blurRadius: 25,
                     offset: Offset(0, 3),
                   )
                 ]),

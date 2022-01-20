@@ -88,6 +88,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_textfield_autocomplete:
+    dependency: "direct main"
+    description:
+      name: flutter_textfield_autocomplete
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.2"
+  get:
+    dependency: "direct main"
+    description:
+      name: get
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.6.1"
   lints:
     dependency: transitive
     description:

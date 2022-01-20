@@ -185,7 +185,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const LocationSetUpPage())),
+                                            LocationSetUpPage())),
                                 imgName:
                                     'assets/graphics/sign_up_register_icon.png',
                                 color: Colors.white,

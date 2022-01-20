@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:venuedash2/routers/location_set_up_page.dart';
 import 'package:venuedash2/routers/registration_page.dart';
 import 'package:venuedash2/utils/constants.dart';
 import 'package:venuedash2/routers/forget_pwd_page.dart';
-import 'package:venuedash2/routers/location_page.dart';
 import 'package:venuedash2/widgets/outlined_border_button_long.dart';
 import 'package:venuedash2/widgets/rounded_button_long.dart';
 import 'package:venuedash2/widgets/rounded_input_field.dart';
@@ -158,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const LocationPage())),
+                                            LocationSetUpPage())),
                                 imgName:
                                     'assets/graphics/welcome_login_icon.png',
                                 color: Colors.white,
