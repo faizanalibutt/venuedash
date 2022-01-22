@@ -14,28 +14,32 @@ class RoundedLocationInputField extends StatelessWidget {
   final String hintText;
   final Color hintTextColor;
   final TextEditingController? textController;
-  final Widget? routerName;
 
-  const RoundedLocationInputField(
-      {Key? key,
-      this.onChanged,
-      this.focus = false,
-      required this.textInputType,
-      this.color = Colors.white,
-      this.textColor = kWhite700Color,
-      this.cursorColor = Colors.white,
-      this.hintText = "",
-      this.hintTextColor = kBlackColor30,
-      this.textController,
-      this.routerName})
-      : super(key: key);
+  final double fieldWidth;
+
+  final VoidCallback? fieldIconCallback;
+
+  const RoundedLocationInputField({
+    Key? key,
+    this.onChanged,
+    this.focus = false,
+    required this.textInputType,
+    this.color = Colors.white,
+    this.textColor = kWhite700Color,
+    this.cursorColor = Colors.white,
+    this.hintText = "",
+    this.hintTextColor = kBlackColor30,
+    this.textController,
+    this.fieldWidth = .85,
+    this.fieldIconCallback,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return TextFieldLocationContainer(
       child: SizedBox(
-        width: size.width * .85,
+        width: size.width * fieldWidth,
         child: TextField(
           onChanged: onChanged,
           cursorColor: cursorColor,
@@ -44,7 +48,7 @@ class RoundedLocationInputField extends StatelessWidget {
           style: TextStyle(color: textColor),
           cursorWidth: 1,
           decoration: InputDecoration(
-            contentPadding: const EdgeInsets.only(left: 16),
+            contentPadding: const EdgeInsets.only(left: 16, right: 0),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30.0),
                 borderSide: const BorderSide(
@@ -60,14 +64,13 @@ class RoundedLocationInputField extends StatelessWidget {
             //   borderRadius: BorderRadius.circular(40),
             // ),
             suffixIcon: InkWell(
-                onTap: () => {
-                      Get.to(routerName,
-                          transition: Transition.native,
-                          duration: const Duration(milliseconds: 500))
-                    }, // implement search here.
+                onTap: () => fieldIconCallback!(),
                 child: Container(
                   height: 5,
-                  padding: const EdgeInsets.only(top: 3, right: 0),
+                  padding: const EdgeInsets.only(
+                    top: 3,
+                    right: 0,
+                  ),
                   child: SvgPicture.asset(
                     "assets/graphics/ic_location_search.svg",
                   ),
@@ -78,6 +81,4 @@ class RoundedLocationInputField extends StatelessWidget {
       ),
     );
   }
-
-  void searchAddress() {}
 }

@@ -12,8 +12,8 @@ class TextFieldLocationContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       borderRadius: BorderRadius.circular(30.0),
-      elevation: 3,
-      shadowColor: const Color(0x29000000),
+      elevation: 5,
+      shadowColor: const Color(0x40000000),
       child: child,
     );
   }

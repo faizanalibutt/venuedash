@@ -43,5 +43,10 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<!-- this is the location permission for ios you might need this commented one but first try with what you have right now -->
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow Location Permission</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Please allow location to test this app!</string>
 </dict>
 </plist>

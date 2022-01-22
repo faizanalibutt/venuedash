@@ -219,7 +219,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                   imgName:
                                       'assets/graphics/sign_up_login_icon.png'),
                               const SizedBox(
-                                height: 20,
+                                height: 45,
+                              ),
+                              SizedBox(
+                                height:
+                                    MediaQuery.of(context).viewInsets.bottom,
                               ),
                             ],
                           ),

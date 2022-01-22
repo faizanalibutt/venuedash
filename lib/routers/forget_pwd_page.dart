@@ -52,12 +52,13 @@ class ForgetPwdPage extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 )),
             SizedBox(
-              height: size.height * .75,
+              height: size.height * .7,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SvgPicture.asset("assets/graphics/forgot_image_bg.svg",
-                        height: size.height * .2),
+                    SvgPicture.asset(
+                      "assets/graphics/forgot_image_bg.svg",
+                    ),
                     SizedBox(
                       height: size.height * .05,
                     ),
@@ -150,6 +151,12 @@ class ForgetPwdPage extends StatelessWidget {
                       color: kPrimaryColor,
                       textColor: Colors.white,
                       onPrimaryColor: Colors.white54,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).viewInsets.bottom,
                     ),
                   ],
                 ),

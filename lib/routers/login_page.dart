@@ -193,6 +193,10 @@ class _LoginPageState extends State<LoginPage> {
                               const SizedBox(
                                 height: 40,
                               ),
+                              SizedBox(
+                                height:
+                                    MediaQuery.of(context).viewInsets.bottom,
+                              ),
                             ],
                           ),
                         )),

@@ -9,6 +9,7 @@ class RoundedButtonLong extends StatelessWidget {
   final String imgName;
   final bool isSVG;
   final Color onPrimaryColor;
+  final double buttonWidth;
 
   const RoundedButtonLong({
     Key? key,
@@ -17,26 +18,24 @@ class RoundedButtonLong extends StatelessWidget {
     this.color = kPrimaryColor,
     this.textColor = Colors.black,
     required this.imgName,
-    this.isSVG = false, this.onPrimaryColor = kPrimaryColor,
+    this.isSVG = false,
+    this.onPrimaryColor = kPrimaryColor,
+    this.buttonWidth = .85,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * 0.85,
-      decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(25.0),
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black12,
-              spreadRadius: 4,
-              blurRadius: 14,
-              offset: Offset(0, 3),
-            )
-          ]),
+      width: size.width * buttonWidth,
+      decoration: const BoxDecoration(boxShadow: [
+        BoxShadow(
+          color: Colors.black12,
+          spreadRadius: 4,
+          blurRadius: 14,
+          offset: Offset(0, 3),
+        )
+      ]),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(14),
         child: newElevatedButton(),
@@ -55,7 +54,8 @@ class RoundedButtonLong extends StatelessWidget {
           ),
           Text(
             text,
-            style: TextStyle(color: textColor, fontWeight: FontWeight.w300),
+            style: TextStyle(
+                color: textColor, fontWeight: FontWeight.w300, fontSize: 12.0),
           )
         ],
       ),
