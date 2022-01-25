@@ -13,14 +13,14 @@ class ConfirmationDialog2 extends StatelessWidget {
   final Function onYesPressed;
   final Function? onNoPressed;
 
-  ConfirmationDialog2({
+  const ConfirmationDialog2({Key? key, 
     required this.icon,
     this.iconSize = 50,
     this.title,
     required this.description,
     required this.onYesPressed,
     this.onNoPressed,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,4 @@
 import 'dart:async';
-
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/parser.dart';
@@ -8,26 +6,25 @@ import 'package:geolocator/geolocator.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
-import 'package:get/get_navigation/src/routes/transitions_type.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:venuedash2/controller/text_controller.dart';
-import 'package:venuedash2/routers/home_page.dart';
 import 'package:venuedash2/utils/constants.dart';
 import 'package:venuedash2/widgets/confirmation_dialog_2.dart';
 import 'package:venuedash2/widgets/custom_alert_dialog.dart';
 import 'package:venuedash2/widgets/rounded_button_long.dart';
 import 'package:venuedash2/widgets/rounded_location_input_field.dart';
 
-class LocationConfirmPage extends StatefulWidget {
-  const LocationConfirmPage({Key? key}) : super(key: key);
+class LocationEditPage extends StatefulWidget {
+  const LocationEditPage({Key? key}) : super(key: key);
 
   @override
-  _LocationConfirmPageState createState() => _LocationConfirmPageState();
+  _LocationEditPageState createState() => _LocationEditPageState();
 }
 
-class _LocationConfirmPageState extends State<LocationConfirmPage> {
-  final textControllerGet = Get.find<TextController>();
+class _LocationEditPageState extends State<LocationEditPage> {
+  final textController = Get.find<TextController>();
 
   final Completer<GoogleMapController> _controller = Completer();
   static const LatLng _center = LatLng(45.521563, -122.677433);
@@ -59,27 +56,41 @@ class _LocationConfirmPageState extends State<LocationConfirmPage> {
           SizedBox(
             height: size.height * .05,
           ),
-          Container(
-              height: size.height * .05,
-              alignment: Alignment.center,
-              child: const FittedBox(
-                child: Text("Confirm Location",
-                    style: TextStyle(color: kBlackHeadingColor, fontSize: 24)),
-              )),
-          Container(
-            height: size.height * .05,
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: const AutoSizeText(
-              "Please confirm your location or change it.",
-              style: TextStyle(color: kBlackSubHeadingColor, fontSize: 12),
-              minFontSize: 8,
-              maxLines: 2,
-              textAlign: TextAlign.center,
-              overflow: TextOverflow.ellipsis,
-            ),
+          Stack(
+            children: [
+              Container(
+                alignment: Alignment.center,
+                width: size.width,
+                height: size.height * .08,
+                child: Text("Edit Location",
+                    style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                      color: kBlackHeadingColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ))),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: size.width * .03,
+                  ),
+                  SizedBox(
+                    width: size.width * .15,
+                    child: InkWell(
+                      onTap: () => Get.back(),
+                      child: Image.asset(
+                        "assets/graphics/ic_back_button.png",
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
           SizedBox(
-            height: size.height * .85,
+            height: size.height * .86,
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -96,7 +107,7 @@ class _LocationConfirmPageState extends State<LocationConfirmPage> {
                           textColor: kBlackFieldColor,
                           cursorColor: Colors.black,
                           hintText: "Search Manually...",
-                          textController: textControllerGet.textController,
+                          textController: textController.textController,
                           fieldIconCallback: () {
                             setState(() {
                               _markers.clear();
@@ -164,10 +175,8 @@ class _LocationConfirmPageState extends State<LocationConfirmPage> {
                   ),
                   RoundedButtonLong(
                     buttonWidth: .9,
-                    text: "Confirm",
-                    press: () => Get.to(HomePage(),
-                        transition: Transition.native,
-                        duration: const Duration(milliseconds: 500)),
+                    text: "Update Location",
+                    press: () => Get.back(),
                     imgName: 'assets/graphics/ic_confirm_location_icon.png',
                     color: kPrimaryColor,
                     textColor: Colors.white,

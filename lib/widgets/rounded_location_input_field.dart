@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 import 'package:venuedash2/widgets/text_field_location_container.dart';
 import '../utils/constants.dart';
 

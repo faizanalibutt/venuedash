@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:venuedash2/controller/TextController.dart';
+import 'package:venuedash2/controller/text_controller.dart';
 import 'package:venuedash2/routers/location_confirm_page.dart';
 import 'package:venuedash2/utils/constants.dart';
 import 'package:venuedash2/widgets/rounded_button_long.dart';

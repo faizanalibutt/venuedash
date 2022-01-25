@@ -23,8 +23,8 @@ class ForgetPwdPage extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () => Navigator.pop(context),
-                  child: SvgPicture.asset(
-                    "assets/graphics/ic_back_button.svg",
+                  child: Image.asset(
+                    "assets/graphics/ic_back_button.png",
                   ),
                 ),
                 Container(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:venuedash2/utils/dimensions.dart';
 import 'package:venuedash2/utils/styles.dart';
 import 'package:venuedash2/widgets/rounded_button_long.dart';
