@@ -57,7 +57,7 @@ class ForgetPwdPage extends StatelessWidget {
                 child: Column(
                   children: [
                     SvgPicture.asset(
-                      "assets/graphics/forgot_image_bg.svg",
+                      "assets/graphics/images/forgot_image_bg.svg",
                     ),
                     SizedBox(
                       height: size.height * .05,
@@ -113,7 +113,7 @@ class ForgetPwdPage extends StatelessWidget {
                                           height: 12,
                                         ),
                                         SvgPicture.asset(
-                                            "assets/graphics/forget_circle_img.svg"),
+                                            "assets/graphics/images/forget_circle_img.svg"),
                                         const SizedBox(
                                           height: 12,
                                         ),

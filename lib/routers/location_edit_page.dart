@@ -195,7 +195,7 @@ class _LocationEditPageState extends State<LocationEditPage> {
   void svgParser() {
     final SvgParser parser = SvgParser();
     try {
-      parser.parse("assets/graphics/ic_current_location_icon.svg",
+      parser.parse("assets/graphics/images/ic_current_location_icon.svg",
           warningsAsErrors: false);
       if (kDebugMode) print('SVG is supported');
     } catch (e) {

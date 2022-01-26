@@ -71,7 +71,7 @@ class RoundedLocationInputField extends StatelessWidget {
                     right: 0,
                   ),
                   child: SvgPicture.asset(
-                    "assets/graphics/ic_location_search.svg",
+                    "assets/graphics/images/ic_location_search.svg",
                   ),
                 )),
           ),

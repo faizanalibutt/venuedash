@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Positioned.fill(
                     child: SvgPicture.asset(
-                      "assets/graphics/account_bg.svg",
+                      "assets/graphics/images/account_bg.svg",
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -122,9 +122,9 @@ class _LoginPageState extends State<LoginPage> {
                                               shape: BoxShape.circle),
                                           child: isRemember
                                               ? SvgPicture.asset(
-                                                  "assets/graphics/condition_img_check.svg")
+                                                  "assets/graphics/images/condition_img_check.svg")
                                               : SvgPicture.asset(
-                                                  "assets/graphics/condition_img_not_check.svg"))),
+                                                  "assets/graphics/images/condition_img_not_check.svg"))),
                                   const SizedBox(width: 5.0),
                                   const Text("Remember me",
                                       style: TextStyle(

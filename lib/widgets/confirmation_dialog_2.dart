@@ -63,7 +63,7 @@ class ConfirmationDialog2 extends StatelessWidget {
                   Get.back();
                   onNoPressed!();
                 },
-                imgName: "assets/graphics/forgot_pwd_okay_icon.png",
+                
                 textColor: Colors.white,
               ),
             ),
@@ -72,7 +72,7 @@ class ConfirmationDialog2 extends StatelessWidget {
               child: RoundedButtonLong(
                 text: "Okay",
                 press: () => onYesPressed(),
-                imgName: "assets/graphics/forgot_pwd_okay_icon.png",
+                
                 textColor: Colors.white,
               ),
             ),

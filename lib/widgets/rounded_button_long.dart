@@ -17,7 +17,7 @@ class RoundedButtonLong extends StatelessWidget {
     required this.press,
     this.color = kPrimaryColor,
     this.textColor = Colors.black,
-    required this.imgName,
+    this.imgName = "",
     this.isSVG = false,
     this.onPrimaryColor = kPrimaryColor,
     this.buttonWidth = .85,

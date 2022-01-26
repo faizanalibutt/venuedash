@@ -51,7 +51,7 @@ class LocationSetUpPage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SvgPicture.asset("assets/graphics/location_set_up_img.svg"),
+                  SvgPicture.asset("assets/graphics/images/location_set_up_img.svg"),
                   SizedBox(
                     height: size.height * .05,
                   ),

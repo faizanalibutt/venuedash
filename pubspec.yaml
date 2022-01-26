@@ -68,6 +68,7 @@ flutter:
   assets:
     - assets/
     - assets/graphics/
+    - assets/graphics/images/
     - assets/language/
   #   - images/a_dot_ham.jpeg
 

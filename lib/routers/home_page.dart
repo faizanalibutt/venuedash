@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10),
                               child: SvgPicture.asset(
-                                  "assets/graphics/ic_home_location_mark.svg"),
+                                  "assets/graphics/images/ic_home_location_mark.svg"),
                             ),
                             Text(
                                 widget.textControllerGet.controllerTextValue

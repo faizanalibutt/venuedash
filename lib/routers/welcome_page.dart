@@ -23,7 +23,7 @@ class WelcomePage extends StatelessWidget {
             Image.asset("assets/graphics/welcome_logo.png",
                 height: size.height * .15),
             SizedBox(height: size.height * .01),
-            SvgPicture.asset("assets/graphics/welcome_illustration.svg",
+            SvgPicture.asset("assets/graphics/images/welcome_illustration.svg",
                 height: size.height * .35),
             SizedBox(
               height: size.height * .05,
@@ -34,7 +34,7 @@ class WelcomePage extends StatelessWidget {
                 children: [
                   Positioned.fill(
                     child: SvgPicture.asset(
-                      "assets/graphics/welcome_lower_img.svg",
+                      "assets/graphics/images/welcome_lower_img.svg",
                       fit: BoxFit.fill,
                     ),
                   ),
