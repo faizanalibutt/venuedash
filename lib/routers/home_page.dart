@@ -22,71 +22,33 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      key: widget._key,
-      backgroundColor: Colors.white,
-      body: Column(children: [
-        Container(
-          alignment: Alignment.bottomCenter,
-          height: size.height * .12,
-          child: Row(children: [
-            SizedBox(
-              width: size.width * .02,
-            ),
-            SizedBox(
-              width: size.width * .15,
-              child: InkWell(
-                onTap: () {
-                  widget._key.currentState!.openDrawer();
-                },
-                child: Image.asset(
-                  "assets/graphics/ic_home_drawer_button.png",
+        key: widget._key,
+        backgroundColor: Colors.white,
+        resizeToAvoidBottomInset: false,
+        body: Column(children: [
+          Container(
+            alignment: Alignment.bottomCenter,
+            height: size.height * .12,
+            child: Row(children: [
+              SizedBox(
+                width: size.width * .02,
+              ),
+              SizedBox(
+                width: size.width * .15,
+                child: InkWell(
+                  onTap: () {
+                    widget._key.currentState!.openDrawer();
+                  },
+                  child: Image.asset(
+                    "assets/graphics/ic_home_drawer_button.png",
+                  ),
                 ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.only(bottom: 10, left: 12),
-              color: Colors.white,
-              width: size.width * .51,
-              child: Text("Home",
-                  style: GoogleFonts.lato(
-                      textStyle: const TextStyle(
-                    color: kBlackHeadingColor,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ))),
-            ),
-            SizedBox(
-              width: size.width * .15,
-              child: InkWell(
-                onTap: () {},
-                child: Image.asset(
-                  "assets/graphics/ic_notification_icon.png",
-                ),
-              ),
-            ),
-            SizedBox(
-              width: size.width * .15,
-              child: InkWell(
-                onTap: () {},
-                child: Image.asset(
-                  "assets/graphics/ic_add_to_cart_icon.png",
-                ),
-              ),
-            ),
-            SizedBox(
-              width: size.width * .01,
-            ),
-          ]),
-        ),
-        SizedBox(
-          height: size.height * .88,
-          child: SingleChildScrollView(
-              child: Column(
-            children: [
               Container(
-                width: size.width * .9,
+                padding: const EdgeInsets.only(bottom: 10, left: 12),
                 color: Colors.white,
-                child: Text("Selected Location",
+                width: size.width * .51,
+                child: Text("Home",
                     style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                       color: kBlackHeadingColor,
@@ -94,78 +56,488 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold,
                     ))),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              Ink(
-                width: size.width * .9,
-                decoration: const BoxDecoration(
-                  color: kLoationFiedlBgColor,
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                ),
+              SizedBox(
+                width: size.width * .15,
                 child: InkWell(
-                  borderRadius: const BorderRadius.all(Radius.circular(12)),
-                  onTap: () {
-                    Get.to(() => const LocationEditPage());
-                  },
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10),
-                              child: SvgPicture.asset(
-                                  "assets/graphics/images/ic_home_location_mark.svg"),
-                            ),
-                            Text(
-                                widget.textControllerGet.controllerTextValue
-                                    .value,
-                                style: GoogleFonts.lato(
-                                    textStyle: const TextStyle(
-                                  color: kBlackHeadingColor,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal,
-                                ))),
-                          ],
-                        ),
-                        width: size.width * .75,
-                      ),
-                      SizedBox(
-                          child: Padding(
-                        padding: const EdgeInsets.only(top: 3),
-                        child: Image.asset(
-                          "assets/graphics/ic_edit_location_home_icon.png",
-                          width: size.width * .15,
-                        ),
-                      )),
-                    ],
+                  onTap: () {},
+                  child: Image.asset(
+                    "assets/graphics/ic_notification_icon.png",
                   ),
                 ),
               ),
-            ],
-          )),
-        )
-      ]),
-      drawer: Drawer(
-        elevation: 16.0,
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 20,
+              SizedBox(
+                width: size.width * .15,
+                child: InkWell(
+                  onTap: () {},
+                  child: Image.asset(
+                    "assets/graphics/ic_add_to_cart_icon.png",
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: size.width * .01,
+              ),
+            ]),
+          ),
+          SizedBox(
+            height: size.height * .88,
+            child: SingleChildScrollView(
+                child: Column(
+              children: [
+                Container(
+                  width: size.width * .9,
+                  color: Colors.white,
+                  child: Text("Selected Location",
+                      style: GoogleFonts.lato(
+                          textStyle: const TextStyle(
+                        color: kBlackHeadingColor,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ))),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Ink(
+                  width: size.width * .9,
+                  decoration: const BoxDecoration(
+                    color: kLoationFiedlBgColor,
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                  ),
+                  child: InkWell(
+                    borderRadius: const BorderRadius.all(Radius.circular(12)),
+                    onTap: () {
+                      Get.to(() => const LocationEditPage());
+                    },
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: SvgPicture.asset(
+                                    "assets/graphics/images/ic_home_location_mark.svg"),
+                              ),
+                              Obx(
+                                () => Flexible(
+                                    child: Text(
+                                        widget.textControllerGet
+                                            .controllerTextValue.value,
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                                color: kBlackHeadingColor,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.normal,
+                                                overflow:
+                                                    TextOverflow.ellipsis)))),
+                              ),
+                            ],
+                          ),
+                          width: size.width * .75,
+                        ),
+                        SizedBox(
+                            child: Padding(
+                          padding: const EdgeInsets.only(top: 3),
+                          child: Image.asset(
+                            "assets/graphics/ic_edit_location_home_icon.png",
+                            width: size.width * .15,
+                          ),
+                        )),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            )),
+          )
+        ]),
+        drawer: SizedBox(
+          width: size.width * .7,
+          child: Drawer(
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(30),
+                  bottomRight: Radius.circular(30)),
             ),
-            ListTile(
-              //tileColor: Colors.green,
-              onTap: () {},
-              leading: const Icon(Icons.person),
-              hoverColor: Colors.grey,
-              title: const Text("My Account"),
-              trailing: const Icon(Icons.search),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: size.height * .12,
+                  alignment: Alignment.bottomLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: InkWell(
+                      onTap: () {
+                        widget._key.currentState!.openEndDrawer();
+                      },
+                      child: Image.asset(
+                        "assets/graphics/ic_close_icon.png",
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 15, right: 15, top: 10, bottom: 20),
+                  child: Ink(
+                    decoration: const BoxDecoration(
+                      color: kLoationFiedlBgColor,
+                      borderRadius: BorderRadius.all(Radius.circular(18)),
+                    ),
+                    height: size.height * .2,
+                    child: InkWell(
+                      borderRadius: const BorderRadius.all(Radius.circular(18)),
+                      onTap: () {
+                        widget._key.currentState!.openEndDrawer();
+                      },
+                      child: Stack(
+                        children: [
+                          Container(
+                            alignment: Alignment.topRight,
+                            padding: const EdgeInsets.only(right: 4, top: 4),
+                            child: Image.asset(
+                              "assets/graphics/ic_edit_icon.png",
+                            ),
+                          ),
+                          // do remember link in decoration when actual image is added by user.
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                child: Image.asset(
+                                  "assets/graphics/ic_profile_icon.png",
+                                ),
+                                padding: const EdgeInsets.only(top: 8, left: 8),
+                              ),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              Padding(
+                                child: Text(
+                                  "Melvin Harris",
+                                  style: GoogleFonts.lato(
+                                      textStyle: const TextStyle(
+                                    color: kBlackHeadingColor,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8),
+                              ),
+                              Padding(
+                                child: Text(
+                                  "malvinharris91@gmail.com",
+                                  style: GoogleFonts.lato(
+                                      textStyle: const TextStyle(
+                                    color: kBlackFieldColor,
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w300,
+                                  )),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Divider(
+                    color: kBlackColor30,
+                    height: 1.0,
+                  ),
+                ),
+                SizedBox(
+                  height: size.height * .63,
+                  child: Padding(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          InkWell(
+                              onTap: () =>
+                                  widget._key.currentState!.openEndDrawer(),
+                              child: Padding(
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      "assets/graphics/ic_home_black_icon.png",
+                                    ),
+                                    const SizedBox(
+                                      width: 12,
+                                    ),
+                                    Text(
+                                      "Home",
+                                      style: GoogleFonts.lato(
+                                          textStyle: const TextStyle(
+                                        color: kBlackHeadingColor,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                              )),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          InkWell(
+                              onTap: () =>
+                                  widget._key.currentState!.openEndDrawer(),
+                              child: Padding(
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      "assets/graphics/ic_order_history_black_icon.png",
+                                    ),
+                                    const SizedBox(
+                                      width: 12,
+                                    ),
+                                    Text(
+                                      "Orders History",
+                                      style: GoogleFonts.lato(
+                                          textStyle: const TextStyle(
+                                        color: kBlackHeadingColor,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                              )),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          InkWell(
+                              onTap: () =>
+                                  widget._key.currentState!.openEndDrawer(),
+                              child: Padding(
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      "assets/graphics/ic_payment_black_icon.png",
+                                    ),
+                                    const SizedBox(
+                                      width: 12,
+                                    ),
+                                    Text(
+                                      "Payment Methods",
+                                      style: GoogleFonts.lato(
+                                          textStyle: const TextStyle(
+                                        color: kBlackHeadingColor,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                              )),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          InkWell(
+                              onTap: () =>
+                                  widget._key.currentState!.openEndDrawer(),
+                              child: Padding(
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      "assets/graphics/ic_help_black_icon.png",
+                                    ),
+                                    const SizedBox(
+                                      width: 12,
+                                    ),
+                                    Text(
+                                      "Need Help?",
+                                      style: GoogleFonts.lato(
+                                          textStyle: const TextStyle(
+                                        color: kBlackHeadingColor,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                              )),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          InkWell(
+                              onTap: () =>
+                                  widget._key.currentState!.openEndDrawer(),
+                              child: Padding(
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      "assets/graphics/ic_feedback_black_icon.png",
+                                    ),
+                                    const SizedBox(
+                                      width: 12,
+                                    ),
+                                    Text(
+                                      "Give us Feedback",
+                                      style: GoogleFonts.lato(
+                                          textStyle: const TextStyle(
+                                        color: kBlackHeadingColor,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                              )),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          InkWell(
+                              onTap: () =>
+                                  widget._key.currentState!.openEndDrawer(),
+                              child: Padding(
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      "assets/graphics/ic_terms_black_icon.png",
+                                    ),
+                                    const SizedBox(
+                                      width: 12,
+                                    ),
+                                    Text(
+                                      "Terms & Conditions",
+                                      style: GoogleFonts.lato(
+                                          textStyle: const TextStyle(
+                                        color: kBlackHeadingColor,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                              )),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          InkWell(
+                              onTap: () =>
+                                  widget._key.currentState!.openEndDrawer(),
+                              child: Padding(
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      "assets/graphics/ic_setting_black_icon.png",
+                                    ),
+                                    const SizedBox(
+                                      width: 12,
+                                    ),
+                                    Text(
+                                      "Settings",
+                                      style: GoogleFonts.lato(
+                                          textStyle: const TextStyle(
+                                        color: kBlackHeadingColor,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                              )),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const Divider(
+                            color: kBlackColor30,
+                            height: 1.0,
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Ink(
+                            color: kLoationFiedlBgColor,
+                            child: InkWell(
+                                onTap: () =>
+                                    widget._key.currentState!.openEndDrawer(),
+                                child: Padding(
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        "assets/graphics/ic_logout_black_icon.png",
+                                      ),
+                                      const SizedBox(
+                                        width: 12,
+                                      ),
+                                      Text(
+                                        "Logout",
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                          color: kBlackHeadingColor,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.bold,
+                                        )),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ],
+                                  ),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 15, vertical: 10),
+                                )),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).viewInsets.bottom,
+                          ),
+                        ],
+                      ),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 20, horizontal: 20),
+                  ),
+                )
+              ],
             ),
-          ],
-        ),
-      ),
-    );
+          ),
+        ));
   }
 }

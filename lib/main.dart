@@ -11,7 +11,6 @@ class VenueDash extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-        debugShowCheckedModeBanner: false, home: HomePage());
+    return GetMaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
   }
 }

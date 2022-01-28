@@ -13,4 +13,17 @@ class TextController extends GetxController {
       controllerTextValue.value = textController.text;
     });
   }
+  /* 
+                ListTile(
+                  //tileColor: Colors.green,
+                  onTap: () {
+                    widget._key.currentState!.openEndDrawer();
+                  },
+                  leading: const Icon(Icons.person),
+                  hoverColor: Colors.grey,
+                  title: const Text("My Account"),
+                  trailing: const Icon(Icons.search),
+                ), 
+*/
+
 }

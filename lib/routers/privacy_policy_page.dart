@@ -11,24 +11,28 @@ class PrivacyPolicyPage extends StatelessWidget {
     return Material(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       SizedBox(height: size.height * .05),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          InkWell(
-            onTap: () => Navigator.pop(context),
-            child: Image.asset(
-              "assets/graphics/ic_back_button.png",
+      Container(
+        padding: const EdgeInsets.only(left: 20.0, right: 30.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            InkWell(
+              onTap: () => Navigator.pop(context),
+              child: Image.asset(
+                "assets/graphics/ic_back_button.png",
+              ),
             ),
-          ),
-          Container(
-              height: size.height * .1,
-              padding: const EdgeInsets.only(left: 18.0),
-              alignment: Alignment.centerLeft,
-              child: const FittedBox(
-                child: Text("Terms & Conditions",
-                    style: TextStyle(color: kBlackHeadingColor, fontSize: 24)),
-              )),
-        ],
+            Container(
+                height: size.height * .1,
+                padding: const EdgeInsets.only(left: 18.0),
+                alignment: Alignment.centerLeft,
+                child: const FittedBox(
+                  child: Text("Terms & Conditions",
+                      style:
+                          TextStyle(color: kBlackHeadingColor, fontSize: 24)),
+                )),
+          ],
+        ),
       ),
       SizedBox(
         height: size.height * .85,
