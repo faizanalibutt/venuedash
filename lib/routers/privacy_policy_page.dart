@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:venuedash2/utils/constants.dart';
 
 class PrivacyPolicyPage extends StatelessWidget {
@@ -17,7 +18,7 @@ class PrivacyPolicyPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             InkWell(
-              onTap: () => Navigator.pop(context),
+              onTap: () => Get.back(),
               child: Image.asset(
                 "assets/graphics/ic_back_button.png",
               ),

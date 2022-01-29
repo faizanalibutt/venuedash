@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:venuedash2/controller/text_controller.dart';
 import 'package:venuedash2/routers/location_edit_page.dart';
+import 'package:venuedash2/routers/privacy_policy_page.dart';
+import 'package:venuedash2/routers/settings_page.dart';
 import 'package:venuedash2/utils/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -102,10 +104,10 @@ class _HomePageState extends State<HomePage> {
                   width: size.width * .9,
                   decoration: const BoxDecoration(
                     color: kLoationFiedlBgColor,
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
                   ),
                   child: InkWell(
-                    borderRadius: const BorderRadius.all(Radius.circular(12)),
+                    borderRadius: const BorderRadius.all(Radius.circular(16)),
                     onTap: () {
                       Get.to(() => const LocationEditPage());
                     },
@@ -204,51 +206,57 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           // do remember link in decoration when actual image is added by user.
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                child: Image.asset(
-                                  "assets/graphics/ic_profile_icon.png",
+                          Positioned(
+                              bottom: 0,
+                              child: Padding(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      child: Image.asset(
+                                        "assets/graphics/ic_profile_icon.png",
+                                      ),
+                                      padding: const EdgeInsets.only(
+                                          top: 8, left: 8),
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    Padding(
+                                      child: Text(
+                                        "Melvin Harris",
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                          color: kBlackHeadingColor,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                        )),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8),
+                                    ),
+                                    Padding(
+                                      child: Text(
+                                        "malvinharris91@gmail.com",
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                          color: kBlackFieldColor,
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w300,
+                                        )),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8),
+                                    ),
+                                  ],
                                 ),
-                                padding: const EdgeInsets.only(top: 8, left: 8),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Padding(
-                                child: Text(
-                                  "Melvin Harris",
-                                  style: GoogleFonts.lato(
-                                      textStyle: const TextStyle(
-                                    color: kBlackHeadingColor,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                  )),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 8),
-                              ),
-                              Padding(
-                                child: Text(
-                                  "malvinharris91@gmail.com",
-                                  style: GoogleFonts.lato(
-                                      textStyle: const TextStyle(
-                                    color: kBlackFieldColor,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w300,
-                                  )),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 8),
-                              ),
-                            ],
-                          ),
+                                padding: const EdgeInsets.only(bottom: 10),
+                              )),
                         ],
                       ),
                     ),
@@ -423,8 +431,10 @@ class _HomePageState extends State<HomePage> {
                             height: 5,
                           ),
                           InkWell(
-                              onTap: () =>
-                                  widget._key.currentState!.openEndDrawer(),
+                              onTap: () {
+                                widget._key.currentState!.openEndDrawer();
+                                Get.to(() => const PrivacyPolicyPage());
+                              },
                               child: Padding(
                                 child: Row(
                                   children: [
@@ -454,8 +464,10 @@ class _HomePageState extends State<HomePage> {
                             height: 5,
                           ),
                           InkWell(
-                              onTap: () =>
-                                  widget._key.currentState!.openEndDrawer(),
+                              onTap: () {
+                                widget._key.currentState!.openEndDrawer();
+                                Get.to(() => const SettingsPage());
+                              },
                               child: Padding(
                                 child: Row(
                                   children: [
