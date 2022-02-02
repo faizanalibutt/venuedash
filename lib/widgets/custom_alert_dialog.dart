@@ -33,7 +33,7 @@ class CustomAlertDialog extends StatelessWidget {
           RoundedButtonLong(
             text: "Okay",
             press: () => Navigator.pop(context, 'OK'),
-            imgName: "assets/graphics/forgot_pwd_okay_icon.png",
+            imgName: "assets/graphics/ic_okay_icon.png",
             textColor: Colors.white,
           ),
         ]),

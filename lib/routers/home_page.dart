@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:venuedash2/controller/text_controller.dart';
+import 'package:venuedash2/routers/feedback_page.dart';
 import 'package:venuedash2/routers/location_edit_page.dart';
 import 'package:venuedash2/routers/privacy_policy_page.dart';
+import 'package:venuedash2/routers/profile_edit_page.dart';
 import 'package:venuedash2/routers/settings_page.dart';
 import 'package:venuedash2/utils/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -195,6 +197,7 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: const BorderRadius.all(Radius.circular(18)),
                       onTap: () {
                         widget._key.currentState!.openEndDrawer();
+                        Get.to(() => const ProfileEditPage());
                       },
                       child: Stack(
                         children: [
@@ -400,8 +403,10 @@ class _HomePageState extends State<HomePage> {
                             height: 5,
                           ),
                           InkWell(
-                              onTap: () =>
-                                  widget._key.currentState!.openEndDrawer(),
+                              onTap: () {
+                                widget._key.currentState!.openEndDrawer();
+                                Get.to(() => const FeedbackPage());
+                              },
                               child: Padding(
                                 child: Row(
                                   children: [

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:venuedash2/widgets/text_field_container.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:venuedash2/widgets/text_field_feedback_container.dart';
 import '../utils/constants.dart';
 
-class RoundedInputField extends StatelessWidget {
+class RoundedInputFeedackField extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final TextInputType textInputType;
   final bool focus;
@@ -11,7 +12,7 @@ class RoundedInputField extends StatelessWidget {
   final Color cursorColor;
   final double fieldWidth;
 
-  const RoundedInputField({
+  const RoundedInputFeedackField({
     Key? key,
     this.onChanged,
     this.focus = false,
@@ -24,18 +25,22 @@ class RoundedInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFieldContainer(
+    return TextFieldFeedbackContainer(
       fieldWidth: fieldWidth,
       child: TextField(
         onChanged: onChanged,
         cursorColor: cursorColor,
         keyboardType: textInputType,
         autofocus: focus,
-        textAlign: TextAlign.start,
-        style: TextStyle(color: textColor, height: 1.5),
+        maxLines: null,
+        style: GoogleFonts.lato(
+            textStyle: const TextStyle(
+          color: kBlackHeadingColor,
+          fontWeight: FontWeight.normal,
+        )),
         decoration: const InputDecoration(
-            border: InputBorder.none,
-            contentPadding: EdgeInsets.symmetric(horizontal: 20)),
+          border: InputBorder.none,
+        ),
       ),
       borderColor: color,
     );

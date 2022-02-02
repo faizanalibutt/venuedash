@@ -9,6 +9,10 @@ class RoundedPasswordField extends StatelessWidget {
   final bool isPwdVisible;
   final VoidCallback pwdCallbackOn;
   final VoidCallback pwdCallbackOff;
+  final Color borderColor;
+  final Color textColor;
+  final Color iconColor;
+  final Color cursorColor;
 
   const RoundedPasswordField(
       {Key? key,
@@ -16,7 +20,11 @@ class RoundedPasswordField extends StatelessWidget {
       this.onChanged,
       required this.isPwdVisible,
       required this.pwdCallbackOn,
-      required this.pwdCallbackOff})
+      required this.pwdCallbackOff,
+      this.borderColor = Colors.white,
+      this.textColor = kWhite700Color,
+      this.iconColor = kPrimaryLightColor,
+      this.cursorColor = Colors.white})
       : super(key: key);
 
   @override
@@ -25,24 +33,25 @@ class RoundedPasswordField extends StatelessWidget {
       child: TextField(
         obscureText: isPwdVisible,
         onChanged: onChanged,
-        cursorColor: Colors.white,
-        style: const TextStyle(color: kWhite700Color),
+        cursorColor: cursorColor,
+        textAlign: TextAlign.start,
+        style: TextStyle(color: textColor, height: 1.5),
         decoration: InputDecoration(
+            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             border: InputBorder.none,
             suffixIcon: !isPwdVisible
                 ? IconButton(
                     onPressed: () {
                       pwdCallbackOn();
                     },
-                    icon:
-                        const Icon(Icons.visibility, color: kPrimaryLightColor))
+                    icon: Icon(Icons.visibility, color: iconColor))
                 : IconButton(
                     onPressed: () {
                       pwdCallbackOff();
                     },
-                    icon: const Icon(Icons.visibility_off,
-                        color: kPrimaryLightColor))),
+                    icon: Icon(Icons.visibility_off, color: iconColor))),
       ),
+      borderColor: borderColor,
     );
   }
 }

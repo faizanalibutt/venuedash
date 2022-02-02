@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_svg/svg.dart';
 import 'package:venuedash2/utils/constants.dart';
 import 'package:venuedash2/widgets/rounded_button_long.dart';
@@ -137,7 +136,7 @@ class ForgetPwdPage extends StatelessWidget {
                                           press: () =>
                                               Navigator.pop(context, 'OK'),
                                           imgName:
-                                              "assets/graphics/forgot_pwd_okay_icon.png",
+                                              "assets/graphics/ic_okay_icon.png",
                                           textColor: Colors.white,
                                         )
                                       ],

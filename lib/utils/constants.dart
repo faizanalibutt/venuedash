@@ -9,6 +9,7 @@ const kBlackSubHeadingColor = Color(0x8027282D);
 const kBlackFieldColor = Color(0xB027282D);
 const kLoationFiedlBgColor = Color(0xFFF5F5F5);
 const kBlackColor30 = Color(0x4D27282D);
+const kRatingFullColor = Color(0xFFFFC107);
 
 // All hex value from 100% to 0% alpha:
 

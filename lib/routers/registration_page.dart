@@ -19,6 +19,7 @@ class RegistrationPage extends StatefulWidget {
 class _RegistrationPageState extends State<RegistrationPage> {
   bool isChecked = false;
   bool _isPwdVisible = true;
+  bool _isPwdVisible2 = true;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -131,15 +132,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               ),
                               RoundedPasswordField(
                                 onChanged: (value) {},
-                                isPwdVisible: _isPwdVisible,
+                                isPwdVisible: _isPwdVisible2,
                                 pwdCallbackOn: () {
                                   setState(() {
-                                    _isPwdVisible = !_isPwdVisible;
+                                    _isPwdVisible2 = !_isPwdVisible2;
                                   });
                                 },
                                 pwdCallbackOff: () {
                                   setState(() {
-                                    _isPwdVisible = !_isPwdVisible;
+                                    _isPwdVisible2 = !_isPwdVisible2;
                                   });
                                 },
                               ),

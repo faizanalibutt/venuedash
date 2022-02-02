@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:venuedash2/utils/constants.dart';
@@ -79,15 +78,14 @@ class SettingsPage extends StatelessWidget {
                                       "assets/graphics/ic_account_settings_icon.png"),
                                 ),
                                 Flexible(
-                                      child: Text("Account Settings",
-                                          style: GoogleFonts.lato(
-                                              textStyle: const TextStyle(
-                                                  color: kBlackHeadingColor,
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.bold,
-                                                  overflow:
-                                                      TextOverflow.ellipsis)))),
-                                
+                                    child: Text("Account Settings",
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                                color: kBlackHeadingColor,
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.bold,
+                                                overflow:
+                                                    TextOverflow.ellipsis)))),
                               ],
                             ),
                             width: size.width * .75,
