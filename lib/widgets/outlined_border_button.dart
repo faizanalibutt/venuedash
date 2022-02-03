@@ -1,19 +1,26 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:venuedash2/utils/constants.dart';
 
 class OutlinedBorderButton extends StatelessWidget {
   final String text;
   final VoidCallback press;
-  final Color color, textColor;
+  final Color color;
+  final Color textColor;
   final String imgName;
+  final double buttonWidth;
+  final Color borderColor;
+
   const OutlinedBorderButton({
     Key? key,
     required this.text,
     required this.press,
     this.color = kPrimaryColor,
     this.textColor = Colors.white,
-    required this.imgName,
+    this.imgName = "assets/graphics/ic_okay_icon.png",
+    this.buttonWidth = .42, 
+    this.borderColor = Colors.white,
   }) : super(key: key);
 
   @override
@@ -21,7 +28,7 @@ class OutlinedBorderButton extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5),
-      width: size.width * 0.42,
+      width: size.width * buttonWidth,
       child: ClipRRect(
         child: outlinedBorderButton(context),
       ),
@@ -41,7 +48,11 @@ class OutlinedBorderButton extends StatelessWidget {
           ),
           AutoSizeText(
             text,
-            style: TextStyle(color: textColor, fontSize: 12),
+            style: GoogleFonts.lato(
+                textStyle: TextStyle(
+              color: textColor,
+              fontSize: 12,
+            )),
             minFontSize: 8,
           )
         ],
@@ -52,8 +63,8 @@ class OutlinedBorderButton extends StatelessWidget {
               MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(17)),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14.0),
-                  side: const BorderSide(color: Colors.white)))),
+                  borderRadius: BorderRadius.circular(16.0),
+                  side: BorderSide(color: borderColor)))),
     );
   }
 }

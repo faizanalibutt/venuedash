@@ -12,21 +12,23 @@ class CustomAlertConfirmationDialog extends StatelessWidget {
   final String descText;
   final String titleText;
   final double dialogHeight;
+  final String icon;
 
   const CustomAlertConfirmationDialog(
       {Key? key,
       required this.onConfirmPressed,
       this.buttonText = "Okay",
-      this.descText = "Any Desc",
-      this.titleText = "Success!",
-      this.dialogHeight = 270})
+      this.descText = "Desc will be here.",
+      this.titleText = "Title Space",
+      this.dialogHeight = 270,
+      this.icon = "assets/graphics/images/forget_circle_img.svg"})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14.0)), //this right here
+          borderRadius: BorderRadius.circular(16.0)), //this right here
       child: SizedBox(
         height: dialogHeight,
         child: Padding(
@@ -49,7 +51,7 @@ class CustomAlertConfirmationDialog extends StatelessWidget {
               const SizedBox(
                 height: 12,
               ),
-              SvgPicture.asset("assets/graphics/images/forget_circle_img.svg"),
+              SvgPicture.asset(icon),
               const SizedBox(
                 height: 12,
               ),
@@ -57,7 +59,7 @@ class CustomAlertConfirmationDialog extends StatelessWidget {
                 descText,
                 style: GoogleFonts.lato(
                     textStyle: const TextStyle(
-                  color: kBlackHeadingColor,
+                  color: kBlackSubHeadingColor,
                 )),
                 minFontSize: 8,
                 maxLines: 2,
@@ -69,7 +71,10 @@ class CustomAlertConfirmationDialog extends StatelessWidget {
               ),
               RoundedButtonLong(
                 text: buttonText,
-                press: () => {Get.back(), onConfirmPressed},
+                press: () {
+                  Get.back();
+                  onConfirmPressed();
+                },
                 imgName: "assets/graphics/ic_okay_icon.png",
                 textColor: Colors.white,
               )

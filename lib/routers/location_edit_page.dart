@@ -11,7 +11,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:venuedash2/controller/text_controller.dart';
 import 'package:venuedash2/utils/constants.dart';
-import 'package:venuedash2/widgets/confirmation_dialog_2.dart';
+import 'package:venuedash2/widgets/custom_action_dialog.dart';
 import 'package:venuedash2/widgets/custom_alert_dialog.dart';
 import 'package:venuedash2/widgets/rounded_button_long.dart';
 import 'package:venuedash2/widgets/rounded_location_input_field.dart';
@@ -261,9 +261,8 @@ class _LocationEditPageState extends State<LocationEditPage> {
         _permissionGranted == PermissionStatus.deniedForever ||
         _permissionGranted == PermissionStatus.grantedLimited) {
       Get.dialog(
-          ConfirmationDialog2(
-            icon: "assets/graphics/ic_current_location_icon.png",
-            iconSize: 200,
+          CustomActionDialog(
+            icon: "assets/graphics/ic_location_mark_icon.png",
             description:
                 "This app collects location data to enable location fetching at the time of your online status, even when the app is closed or not in use.",
             onYesPressed: () {
@@ -286,9 +285,8 @@ class _LocationEditPageState extends State<LocationEditPage> {
           barrierDismissible: false);
     } else if (!_serviceEnabled) {
       Get.dialog(
-          ConfirmationDialog2(
-            icon: "assets/graphics/ic_current_location_icon.png",
-            iconSize: 200,
+          CustomActionDialog(
+            icon: "assets/graphics/ic_location_mark_icon.png",
             description:
                 "This app collects location data to enable location fetching at the time of your online status, even when the app is closed or not in use.",
             onYesPressed: () {

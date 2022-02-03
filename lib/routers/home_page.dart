@@ -4,11 +4,14 @@ import 'package:get/get.dart';
 import 'package:venuedash2/controller/text_controller.dart';
 import 'package:venuedash2/routers/feedback_page.dart';
 import 'package:venuedash2/routers/location_edit_page.dart';
+import 'package:venuedash2/routers/login_page.dart';
+import 'package:venuedash2/routers/payment_page.dart';
 import 'package:venuedash2/routers/privacy_policy_page.dart';
 import 'package:venuedash2/routers/profile_edit_page.dart';
 import 'package:venuedash2/routers/settings_page.dart';
 import 'package:venuedash2/utils/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:venuedash2/widgets/custom_action_dialog.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -341,8 +344,10 @@ class _HomePageState extends State<HomePage> {
                             height: 5,
                           ),
                           InkWell(
-                              onTap: () =>
-                                  widget._key.currentState!.openEndDrawer(),
+                              onTap: () => {
+                                    widget._key.currentState!.openEndDrawer(),
+                                    Get.to(() => const PaymentPage())
+                                  },
                               child: Padding(
                                 child: Row(
                                   children: [
@@ -511,8 +516,28 @@ class _HomePageState extends State<HomePage> {
                           Ink(
                             color: kLoationFiedlBgColor,
                             child: InkWell(
-                                onTap: () =>
-                                    widget._key.currentState!.openEndDrawer(),
+                                onTap: () {
+                                  widget._key.currentState!.openEndDrawer();
+                                  Get.dialog(
+                                      CustomActionDialog(
+                                        icon: "assets/graphics/ic_sign_out_green_icon.png",
+                                        title: "Logout?",
+                                        description:
+                                            "Are you sure you want to logout your account?",
+                                        iconVe:
+                                            "assets/graphics/ic_sign_out_white_icon.png",
+                                        iconNve:
+                                            "assets/graphics/ic_cancel_icon.png",
+                                        titleBtnYes: "Logout",
+                                        titleBtnNo: "No",
+                                        onYesPressed: () {
+                                          Get.back();
+                                          Get.to(() => const LoginPage());
+                                        },
+                                        onNoPressed: () {},
+                                      ),
+                                      barrierDismissible: true);
+                                },
                                 child: Padding(
                                   child: Row(
                                     children: [

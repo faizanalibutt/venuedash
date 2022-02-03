@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:venuedash2/utils/constants.dart';
 
 class RoundedButtonLong extends StatelessWidget {
   final String text;
   final VoidCallback press;
-  final Color color, textColor;
+  final Color color;
+  final Color? textColor;
   final String imgName;
   final bool isSVG;
   final Color onPrimaryColor;
@@ -17,7 +19,7 @@ class RoundedButtonLong extends StatelessWidget {
     required this.press,
     this.color = kPrimaryColor,
     this.textColor = Colors.black,
-    this.imgName = "",
+    this.imgName = "assets/graphics/ic_okay_icon.png",
     this.isSVG = false,
     this.onPrimaryColor = kPrimaryColor,
     this.buttonWidth = .85,
@@ -54,17 +56,20 @@ class RoundedButtonLong extends StatelessWidget {
           ),
           Text(
             text,
-            style: TextStyle(
-                color: textColor, fontWeight: FontWeight.w300, fontSize: 12.0),
+            style: GoogleFonts.lato(
+                textStyle: TextStyle(
+              color: textColor,
+              fontSize: 12,
+            )),
           )
         ],
       ),
       onPressed: press,
       style: ElevatedButton.styleFrom(
-          primary: color,
-          onPrimary: onPrimaryColor,
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
-          textStyle: TextStyle(color: textColor, fontSize: 11)),
+        primary: color,
+        onPrimary: onPrimaryColor,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+      ),
     );
   }
 }
