@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:venuedash2/routers/location_set_up_page.dart';
 import 'package:venuedash2/routers/registration_page.dart';
 import 'package:venuedash2/utils/constants.dart';
@@ -49,10 +50,13 @@ class _LoginPageState extends State<LoginPage> {
                         height: size.height * .05,
                         padding: const EdgeInsets.only(left: 30.0, right: 30.0),
                         alignment: Alignment.center,
-                        child: const FittedBox(
+                        child: FittedBox(
                             child: Text(
                           "Login To Your Account.",
-                          style: TextStyle(color: Colors.white, fontSize: 30),
+                          style: GoogleFonts.lato(
+                            textStyle:
+                                const TextStyle(color: Colors.white, fontSize: 24),
+                          ),
                         ))),
                     Container(
                         height: size.height * .05,

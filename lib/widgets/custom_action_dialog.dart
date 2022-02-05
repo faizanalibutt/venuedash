@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:venuedash2/utils/constants.dart';
 import 'package:venuedash2/utils/dimensions.dart';
-import 'package:venuedash2/widgets/outlined_border_button.dart';
+import 'package:venuedash2/widgets/outlined_border_button_long.dart';
 import 'package:venuedash2/widgets/rounded_button_long.dart';
 
 class CustomActionDialog extends StatelessWidget {
@@ -19,8 +19,8 @@ class CustomActionDialog extends StatelessWidget {
   const CustomActionDialog({
     Key? key,
     this.icon = "assets/graphics/images/forget_circle_img.svg",
-    this.iconVe = "assets/graphics/ic_cancle_icon.png",
-    this.iconNve = "assets/graphics/ic_cancle_icon.png",
+    this.iconVe = "assets/graphics/ic_okay_icon.png",
+    this.iconNve = "assets/graphics/ic_cancel_icon.png",
     this.title,
     required this.description,
     required this.onYesPressed,
@@ -69,7 +69,7 @@ class CustomActionDialog extends StatelessWidget {
           const SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
           Row(children: [
             Expanded(
-              child: OutlinedBorderButton(
+              child: OutlinedBorderButtonLong(
                 text: titleBtnNo,
                 press: () {
                   Get.back();
@@ -88,6 +88,7 @@ class CustomActionDialog extends StatelessWidget {
                 press: () => onYesPressed(),
                 textColor: Colors.white,
                 imgName: iconVe,
+                onPrimaryColor: Colors.white54,
               ),
             ),
           ])

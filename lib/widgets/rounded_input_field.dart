@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:venuedash2/widgets/text_field_container.dart';
 import '../utils/constants.dart';
 
@@ -10,6 +11,7 @@ class RoundedInputField extends StatelessWidget {
   final Color textColor;
   final Color cursorColor;
   final double fieldWidth;
+  final MaskTextInputFormatter? inputFormatter;
 
   const RoundedInputField({
     Key? key,
@@ -20,6 +22,7 @@ class RoundedInputField extends StatelessWidget {
     this.textColor = kWhite700Color,
     this.cursorColor = Colors.white,
     this.fieldWidth = .85,
+    this.inputFormatter,
   }) : super(key: key);
 
   @override
@@ -36,6 +39,7 @@ class RoundedInputField extends StatelessWidget {
         decoration: const InputDecoration(
             border: InputBorder.none,
             contentPadding: EdgeInsets.symmetric(horizontal: 20)),
+        inputFormatters: inputFormatter != null ? [inputFormatter!] : [MaskTextInputFormatter()],
       ),
       borderColor: color,
     );

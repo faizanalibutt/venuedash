@@ -56,13 +56,14 @@ class OutlinedBorderButtonLong extends StatelessWidget {
         ],
       ),
       onPressed: press,
-      style: ButtonStyle(
-          padding:
-              MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(17)),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14.0),
-                  side: BorderSide(color: borderColor)))),
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(14.0),
+          side: BorderSide(color: borderColor),
+        ),
+        onPrimary: borderColor,
+        padding: const EdgeInsets.all(18),
+      ),
     );
   }
 }

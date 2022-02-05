@@ -46,7 +46,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: size.width * .03,
+                    width: size.width * .025,
                   ),
                   SizedBox(
                     width: size.width * .15,

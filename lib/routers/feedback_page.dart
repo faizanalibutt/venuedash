@@ -20,14 +20,14 @@ class FeedbackPage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: size.height * .05,
+            height: size.height * .04,
           ),
           Stack(
             children: [
               Container(
                 alignment: Alignment.center,
                 width: size.width,
-                height: size.height * .08,
+                height: size.height * .07,
                 child: Text("Give us Feedback",
                     style: GoogleFonts.lato(
                         textStyle: const TextStyle(
@@ -40,7 +40,7 @@ class FeedbackPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: size.width * .03,
+                    width: size.width * .025,
                   ),
                   SizedBox(
                     width: size.width * .15,
@@ -56,7 +56,7 @@ class FeedbackPage extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: size.height * .86,
+            height: size.height * .87,
             child: Padding(
               child: SingleChildScrollView(
                 child: Column(
@@ -81,7 +81,7 @@ class FeedbackPage extends StatelessWidget {
                       onChanged: (value) {},
                       color: kPrimaryColor,
                       textColor: kBlackFieldColor,
-                      cursorColor: Colors.black,
+                      cursorColor: kPrimaryColor,
                     ),
                     RatingBar.builder(
                       initialRating: 2,

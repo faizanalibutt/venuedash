@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:venuedash2/routers/add_payment_method_page.dart';
 import 'package:venuedash2/utils/constants.dart';
-import 'package:venuedash2/widgets/custom_alert_confirmation_dialog.dart';
 import 'package:venuedash2/widgets/rounded_button_long.dart';
 
 class PaymentPage extends StatelessWidget {
@@ -74,7 +73,7 @@ class PaymentPage extends StatelessWidget {
                   RoundedButtonLong(
                     buttonWidth: .9,
                     text: "Add a Payment Method",
-                    press: () => {Get.to(() => const AddPaymentMethodPage())},
+                    press: () => {Get.to(() => AddPaymentMethodPage())},
                     imgName: 'assets/graphics/ic_okay_icon.png',
                     color: kPrimaryColor,
                     textColor: Colors.white,

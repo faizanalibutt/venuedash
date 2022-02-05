@@ -8,6 +8,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:venuedash2/controller/text_controller.dart';
@@ -59,18 +60,28 @@ class _LocationConfirmPageState extends State<LocationConfirmPage> {
             height: size.height * .05,
           ),
           Container(
-              height: size.height * .05,
-              alignment: Alignment.center,
-              child: const FittedBox(
-                child: Text("Confirm Location",
-                    style: TextStyle(color: kBlackHeadingColor, fontSize: 24)),
-              )),
+            height: size.height * .05,
+            alignment: Alignment.center,
+            child: FittedBox(
+              child: Text(
+                "Confirm Location",
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                    color: kBlackHeadingColor,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+            ),
+          ),
           Container(
             height: size.height * .05,
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: const AutoSizeText(
+            child: AutoSizeText(
               "Please confirm your location or change it.",
-              style: TextStyle(color: kBlackSubHeadingColor, fontSize: 12),
+              style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                      color: kBlackSubHeadingColor, fontSize: 12)),
               minFontSize: 8,
               maxLines: 2,
               textAlign: TextAlign.center,
@@ -288,8 +299,7 @@ class _LocationConfirmPageState extends State<LocationConfirmPage> {
               if (kDebugMode) print("getProfile Called");
               Get.dialog(
                   CustomAlertDialog(
-                      description:
-                          "You denied location permission for forever."
+                      description: "You denied location permission for forever."
                           " You need to allow permission to use this service.",
                       onOkPressed: () async {
                         Get.back();

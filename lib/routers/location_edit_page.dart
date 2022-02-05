@@ -54,14 +54,14 @@ class _LocationEditPageState extends State<LocationEditPage> {
         resizeToAvoidBottomInset: false,
         body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           SizedBox(
-            height: size.height * .05,
+            height: size.height * .04,
           ),
           Stack(
             children: [
               Container(
                 alignment: Alignment.center,
                 width: size.width,
-                height: size.height * .08,
+                height: size.height * .07,
                 child: Text("Edit Location",
                     style: GoogleFonts.lato(
                         textStyle: const TextStyle(
@@ -74,7 +74,7 @@ class _LocationEditPageState extends State<LocationEditPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: size.width * .03,
+                    width: size.width * .025,
                   ),
                   SizedBox(
                     width: size.width * .15,
@@ -90,7 +90,7 @@ class _LocationEditPageState extends State<LocationEditPage> {
             ],
           ),
           SizedBox(
-            height: size.height * .86,
+            height: size.height * .87,
             child: SingleChildScrollView(
               child: Column(
                 children: [

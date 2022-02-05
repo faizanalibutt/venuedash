@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:venuedash2/utils/constants.dart';
 
 class RoundedButton extends StatelessWidget {
@@ -6,6 +7,8 @@ class RoundedButton extends StatelessWidget {
   final VoidCallback press;
   final Color color, textColor;
   final String imgName;
+  final Color onPrimaryColor;
+
   const RoundedButton({
     Key? key,
     required this.text,
@@ -13,6 +16,7 @@ class RoundedButton extends StatelessWidget {
     this.color = kPrimaryColor,
     this.textColor = Colors.black,
     required this.imgName,
+    this.onPrimaryColor = Colors.white54,
   }) : super(key: key);
 
   @override
@@ -51,17 +55,20 @@ class RoundedButton extends StatelessWidget {
           ),
           Text(
             text,
-            style: TextStyle(color: textColor),
+            style: GoogleFonts.lato(
+                textStyle: TextStyle(
+              color: textColor,
+              fontSize: 12,
+            )),
           )
         ],
       ),
       onPressed: press,
       style: ElevatedButton.styleFrom(
-          primary: color,
-          onPrimary: kPrimaryColor,
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
-          textStyle: TextStyle(
-              color: textColor, fontSize: 12, fontWeight: FontWeight.w500)),
+        primary: color,
+        onPrimary: onPrimaryColor,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+      ),
     );
   }
 }

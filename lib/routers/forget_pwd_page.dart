@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:venuedash2/utils/constants.dart';
 import 'package:venuedash2/widgets/rounded_button_long.dart';
 import 'package:venuedash2/widgets/rounded_input_field.dart';
@@ -16,42 +18,63 @@ class ForgetPwdPage extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: size.height * .05),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+            SizedBox(
+              height: size.height * .04,
+            ),
+            Stack(
               children: [
-                InkWell(
-                  onTap: () => Navigator.pop(context),
-                  child: Image.asset(
-                    "assets/graphics/ic_back_button.png",
+                Container(
+                  alignment: Alignment.center,
+                  width: size.width,
+                  height: size.height * .07,
+                  child: Text(
+                    "Forgot Password?",
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                        color: kBlackHeadingColor,
+                        fontSize: 24,
+                      ),
+                    ),
                   ),
                 ),
-                Container(
-                    height: size.height * .1,
-                    padding: const EdgeInsets.only(left: 18.0),
-                    alignment: Alignment.centerLeft,
-                    child: const FittedBox(
-                      child: Text("Forgot Password?",
-                          style: TextStyle(
-                              color: kBlackHeadingColor, fontSize: 24)),
-                    )),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: size.width * .025,
+                    ),
+                    SizedBox(
+                      width: size.width * .15,
+                      child: InkWell(
+                        onTap: () => Get.back(),
+                        child: Image.asset(
+                          "assets/graphics/ic_back_button.png",
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
             Container(
                 height: size.height * .1,
                 padding: const EdgeInsets.only(left: 30.0, right: 30.0),
                 alignment: Alignment.topLeft,
-                child: const AutoSizeText(
+                child: AutoSizeText(
                   "Enter the email address associated with your "
                   "account and we'll send you a password reset link.",
-                  style: TextStyle(color: kBlackSubHeadingColor, fontSize: 12),
+                  style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                    color: kBlackSubHeadingColor,
+                    fontSize: 12,
+                  )),
                   minFontSize: 8,
                   textAlign: TextAlign.center,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 )),
             SizedBox(
-              height: size.height * .7,
+              height: size.height * .75,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -76,7 +99,7 @@ class ForgetPwdPage extends StatelessWidget {
                       focus: true,
                       color: kPrimaryColor,
                       textColor: kBlackFieldColor,
-                      cursorColor: Colors.black,
+                      cursorColor: kPrimaryColor,
                     ),
                     const SizedBox(
                       height: 10.0,

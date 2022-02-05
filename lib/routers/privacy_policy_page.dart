@@ -39,7 +39,7 @@ class PrivacyPolicyPage extends StatelessWidget {
         height: size.height * .85,
         child: SingleChildScrollView(
           child: Container(
-              padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+              padding: const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 30),
               alignment: Alignment.topLeft,
               child: const AutoSizeText(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel imperdiet augue. Proin a porta orci, eu vulputate nulla. Cras iaculis turpis eget mi egestas commodo. Donec in euismod odio. Vivamus cursus facilisis est, et lobortis nibh ornare facilisis. Sed dictum quam lorem, nec tempor velit auctor non. Vivamus porttitor mollis dolor, vehicula placerat quam faucibus ac. Fusce et ante nec urna condimentum scelerisque in in sem. Suspendisse purus dolor, rutrum quis semper id, consectetur et mauris. Mauris nec risus nec odio posuere tincidunt. Aliquam ultricies scelerisque ante, vitae tempus mi pretium sit amet. Phasellus vel sem vitae quam gravida gravida."

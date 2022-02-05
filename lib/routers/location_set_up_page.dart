@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:venuedash2/controller/text_controller.dart';
 import 'package:venuedash2/routers/location_confirm_page.dart';
 import 'package:venuedash2/utils/constants.dart';
@@ -21,22 +22,30 @@ class LocationSetUpPage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: size.height * .05,
+            height: size.height * .04,
           ),
           Container(
               height: size.height * .05,
               alignment: Alignment.center,
-              child: const FittedBox(
-                child: Text("Set your Location",
-                    style: TextStyle(color: kBlackHeadingColor, fontSize: 24)),
+              child: FittedBox(
+                child: Text(
+                  "Set your Location",
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                        color: kBlackHeadingColor, fontSize: 24),
+                  ),
+                ),
               )),
           Container(
             height: size.height * .05,
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: const AutoSizeText(
+            child: AutoSizeText(
               "Explore venues and shops near you by using your current "
               "location or searching a location manually.",
-              style: TextStyle(color: kBlackSubHeadingColor, fontSize: 12),
+              style: GoogleFonts.lato(
+                textStyle:
+                    const TextStyle(color: kBlackSubHeadingColor, fontSize: 12),
+              ),
               minFontSize: 8,
               maxLines: 2,
               textAlign: TextAlign.center,
@@ -51,7 +60,8 @@ class LocationSetUpPage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SvgPicture.asset("assets/graphics/images/location_set_up_img.svg"),
+                  SvgPicture.asset(
+                      "assets/graphics/images/location_set_up_img.svg"),
                   SizedBox(
                     height: size.height * .05,
                   ),
