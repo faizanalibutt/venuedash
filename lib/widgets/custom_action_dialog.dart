@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:venuedash2/utils/constants.dart';
@@ -15,6 +16,7 @@ class CustomActionDialog extends StatelessWidget {
   final String titleBtnYes;
   final Function onYesPressed;
   final Function? onNoPressed;
+  final bool isSvg;
 
   const CustomActionDialog({
     Key? key,
@@ -27,6 +29,7 @@ class CustomActionDialog extends StatelessWidget {
     this.onNoPressed,
     this.titleBtnNo = "Deny",
     this.titleBtnYes = "OKay",
+    this.isSvg = false,
   }) : super(key: key);
 
   @override
@@ -54,7 +57,7 @@ class CustomActionDialog extends StatelessWidget {
               : const SizedBox(),
           Padding(
             padding: const EdgeInsets.all(Dimensions.PADDING_SIZE_LARGE),
-            child: Image.asset(icon),
+            child: isSvg ? SvgPicture.asset(icon) : Image.asset(icon),
           ),
           AutoSizeText(
             description,

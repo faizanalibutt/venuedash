@@ -50,9 +50,9 @@ class SettingsPage extends StatelessWidget {
             ],
           ),
           SizedBox(
-              height: size.height * .87,
-              child: SingleChildScrollView(
-                  child: Column(
+            height: size.height * .87,
+            child: SingleChildScrollView(
+              child: Column(
                 children: [
                   const SizedBox(
                     height: 20,
@@ -78,14 +78,17 @@ class SettingsPage extends StatelessWidget {
                                       "assets/graphics/ic_account_settings_icon.png"),
                                 ),
                                 Flexible(
-                                    child: Text("Account Settings",
-                                        style: GoogleFonts.lato(
-                                            textStyle: const TextStyle(
-                                                color: kBlackHeadingColor,
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold,
-                                                overflow:
-                                                    TextOverflow.ellipsis)))),
+                                  child: Text(
+                                    "Account Settings",
+                                    style: GoogleFonts.lato(
+                                      textStyle: const TextStyle(
+                                          color: kBlackHeadingColor,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                          overflow: TextOverflow.ellipsis),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                             width: size.width * .75,
@@ -187,19 +190,22 @@ class SettingsPage extends StatelessWidget {
                             width: size.width * .75,
                           ),
                           SizedBox(
-                              child: Padding(
-                            padding: const EdgeInsets.only(top: 3),
-                            child: Image.asset(
-                              "assets/graphics/ic_expand_settings_icon.png",
-                              width: size.width * .15,
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 3),
+                              child: Image.asset(
+                                "assets/graphics/ic_expand_settings_icon.png",
+                                width: size.width * .15,
+                              ),
                             ),
-                          )),
+                          ),
                         ],
                       ),
                     ),
                   ),
                 ],
-              )))
+              ),
+            ),
+          ),
         ],
       ),
     );
