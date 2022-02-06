@@ -22,8 +22,10 @@ class PaymentPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // optimal solution for this is like recycler-view
     Size size = MediaQuery.of(context).size;
-    return Material(
-      child: Column(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
+      body: Column(
         children: [
           SizedBox(
             height: size.height * .04,
@@ -199,6 +201,9 @@ class PaymentPage extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
+                    SizedBox(
+                            height: MediaQuery.of(context).viewInsets.bottom,
+                          ),
                   ],
                 ),
               ),
