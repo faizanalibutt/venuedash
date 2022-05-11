@@ -22,7 +22,7 @@ class LocationSetUpPage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: size.height * .04,
+            height: size.height * .035,
           ),
           Container(
               height: size.height * .05,

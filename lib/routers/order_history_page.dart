@@ -17,7 +17,7 @@ class OrderHistoryPage extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(
-            height: size.height * .04,
+            height: size.height * .035,
           ),
           Stack(
             children: [

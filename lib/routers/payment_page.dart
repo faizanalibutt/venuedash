@@ -28,7 +28,7 @@ class PaymentPage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: size.height * .04,
+            height: size.height * .035,
           ),
           Stack(
             children: [
@@ -162,7 +162,7 @@ class PaymentPage extends StatelessWidget {
                                               },
                                               child: Image.asset(
                                                 "assets/graphics/ic_delete_icon_green.png",
-                                                width: size.width * .15,
+                                                width: size.width * .14,
                                               ),
                                             ),
                                           ),

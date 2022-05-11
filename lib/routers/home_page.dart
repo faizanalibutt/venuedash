@@ -14,6 +14,7 @@ import 'package:venuedash2/routers/settings_page.dart';
 import 'package:venuedash2/utils/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:venuedash2/widgets/custom_action_dialog.dart';
+import 'package:venuedash2/widgets/rounded_location_input_field.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(children: [
         Container(
           alignment: Alignment.bottomCenter,
-          height: size.height * .12,
+          height: size.height * .13,
           child: Row(children: [
             SizedBox(
               width: size.width * .02,
@@ -89,7 +90,7 @@ class _HomePageState extends State<HomePage> {
           ]),
         ),
         SizedBox(
-          height: size.height * .88,
+          height: size.height * .87,
           child: SingleChildScrollView(
               child: Column(
             children: [
@@ -104,9 +105,7 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold,
                     ))),
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               Ink(
                 width: size.width * .9,
                 decoration: const BoxDecoration(
@@ -147,17 +146,458 @@ class _HomePageState extends State<HomePage> {
                         width: size.width * .75,
                       ),
                       SizedBox(
-                          child: Padding(
-                        padding: const EdgeInsets.only(top: 3),
-                        child: Image.asset(
-                          "assets/graphics/ic_edit_location_home_icon.png",
-                          width: size.width * .15,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 3),
+                          child: Image.asset(
+                            "assets/graphics/ic_edit_location_home_icon.png",
+                            width: size.width * .15,
+                          ),
                         ),
-                      )),
+                      ),
                     ],
                   ),
                 ),
               ),
+              const Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 50,
+                  vertical: 30,
+                ),
+                child: Divider(
+                  height: .5,
+                  color: kBlackColor30,
+                ),
+              ),
+              Text(
+                "323 venues found in your location",
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                    color: kBlackSubHeadingColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 25),
+              RoundedLocationInputField(
+                fieldWidth: .9,
+                textInputType: TextInputType.text,
+                onChanged: (value) {},
+                focus: false,
+                color: Colors.grey,
+                textColor: kBlackFieldColor,
+                cursorColor: Colors.black,
+                hintText: "Search...",
+                fieldIconCallback: () {},
+              ),
+              const SizedBox(height: 25),
+              Container(
+                width: size.width * .9,
+                color: Colors.white,
+                child: Text("Venue Categories",
+                    style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                      color: kBlackHeadingColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ))),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 80,
+                width: size.width * .9,
+                child: MediaQuery.removePadding(
+                  context: context,
+                  removeTop: true,
+                  removeBottom: true,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, position) {
+                      return Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Ink(
+                              width: 80,
+                              height: 80,
+                              padding: EdgeInsets.zero,
+                              decoration: const BoxDecoration(
+                                color: kLoationFiedlBgColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(8)),
+                              ),
+                              child: InkWell(
+                                  onTap: () {},
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(8)),
+                                  child: SizedBox(
+                                      child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Flexible(
+                                        flex: 5,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 8),
+                                          child: InkWell(
+                                            onTap: () {},
+                                            child: Image.asset(
+                                              "assets/graphics/venue_category_icon_2.png",
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Flexible(
+                                          flex: 2,
+                                          child: Padding(
+                                              padding: EdgeInsets.zero,
+                                              child: Text("Super Mart",
+                                                  style: GoogleFonts.lato(
+                                                    textStyle: const TextStyle(
+                                                        color:
+                                                            kBlackSubHeadingColor,
+                                                        fontSize: 10,
+                                                        overflow: TextOverflow
+                                                            .ellipsis),
+                                                  )))),
+                                    ],
+                                  )))),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                        ],
+                      );
+                    },
+                    itemCount: 5,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 25),
+              Container(
+                width: size.width * .9,
+                color: Colors.white,
+                child: Text("Popular Venues",
+                    style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                      color: kBlackHeadingColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ))),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                  height: 220,
+                  width: size.width * .9,
+                  child: MediaQuery.removePadding(
+                    context: context,
+                    removeBottom: true,
+                    removeTop: true,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, position) {
+                        return Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Ink(
+                                width: 200,
+                                height: 200,
+                                padding: const EdgeInsets.all(10),
+                                decoration: const BoxDecoration(
+                                  color: kLoationFiedlBgColor,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(16)),
+                                ),
+                                child: InkWell(
+                                    onTap: () {},
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(16),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          height: 130,
+                                          width: 190,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            child: Image.asset(
+                                                "assets/graphics/Rectangle 583.png"),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 3),
+                                        Text("Venue Dash Business",
+                                            textAlign: TextAlign.start,
+                                            style: GoogleFonts.lato(
+                                                textStyle: const TextStyle(
+                                              color: kBlackHeadingColor,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold,
+                                            ))),
+                                        const SizedBox(
+                                          height: 2,
+                                        ),
+                                        Row(children: [
+                                          SizedBox(
+                                            height: 25,
+                                            //color: Colors.yellow,
+                                            width: 90,
+                                            child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Image.asset(
+                                                          "assets/graphics/Icon ionic-ios-star.png"),
+                                                      const SizedBox(width: 5),
+                                                      Text(
+                                                        "3.1 Rating",
+                                                        style: GoogleFonts.lato(
+                                                          textStyle: const TextStyle(
+                                                              color:
+                                                                  kBlackSubHeadingColor,
+                                                              fontSize: 10,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(height: 1,),
+                                                  Row(
+                                                    children: [
+                                                      Image.asset(
+                                                          "assets/graphics/distance.png"),
+                                                      const SizedBox(width: 5),
+                                                      Text(
+                                                        "17.2 km away.",
+                                                        style: GoogleFonts.lato(
+                                                          textStyle: const TextStyle(
+                                                              color:
+                                                                  kBlackSubHeadingColor,
+                                                              fontSize: 10,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )
+                                                ]),
+                                          ),
+                                          SizedBox(
+                                            height: 25,
+                                            width: 90,
+                                            child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                children: [
+                                                  Text(
+                                                    "864 Reviews",
+                                                    style: GoogleFonts.lato(
+                                                      textStyle: const TextStyle(
+                                                          color:
+                                                              kBlackSubHeadingColor,
+                                                          fontSize: 10,
+                                                          overflow: TextOverflow
+                                                              .ellipsis),
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 1,
+                                                  ),
+                                                  Text(
+                                                    "Deliver in 5 minutes",
+                                                    style: GoogleFonts.lato(
+                                                      textStyle: const TextStyle(
+                                                          color:
+                                                              kBlackSubHeadingColor,
+                                                          fontSize: 10,
+                                                          overflow: TextOverflow
+                                                              .ellipsis),
+                                                    ),
+                                                  ),
+                                                ]),
+                                          ),
+                                        ])
+                                      ],
+                                    ))),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                          ],
+                        );
+                      },
+                      itemCount: 5,
+                    ),
+                  )),
+              const SizedBox(height: 5),
+              Container(
+                width: size.width * .9,
+                color: Colors.white,
+                child: Text("New Venues",
+                    style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                      color: kBlackHeadingColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ))),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                  height: 220,
+                  width: size.width * .9,
+                  child: MediaQuery.removePadding(
+                    context: context,
+                    removeBottom: true,
+                    removeTop: true,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, position) {
+                        return Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Ink(
+                                width: 200,
+                                height: 200,
+                                padding: const EdgeInsets.all(10),
+                                decoration: const BoxDecoration(
+                                  color: kLoationFiedlBgColor,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(16)),
+                                ),
+                                child: InkWell(
+                                    onTap: () {},
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(16),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          height: 130,
+                                          width: 190,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            child: Image.asset(
+                                                "assets/graphics/Rectangle 583.png"),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 3),
+                                        Text("Venue Dash Business",
+                                            textAlign: TextAlign.start,
+                                            style: GoogleFonts.lato(
+                                                textStyle: const TextStyle(
+                                              color: kBlackHeadingColor,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold,
+                                            ))),
+                                        const SizedBox(
+                                          height: 2,
+                                        ),
+                                        Row(children: [
+                                          SizedBox(
+                                            height: 25,
+                                            //color: Colors.yellow,
+                                            width: 90,
+                                            child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Image.asset(
+                                                          "assets/graphics/Icon ionic-ios-star.png"),
+                                                      const SizedBox(width: 5),
+                                                      Text(
+                                                        "3.1 Rating",
+                                                        style: GoogleFonts.lato(
+                                                          textStyle: const TextStyle(
+                                                              color:
+                                                                  kBlackSubHeadingColor,
+                                                              fontSize: 10,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 1,
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Image.asset(
+                                                          "assets/graphics/distance.png"),
+                                                      const SizedBox(width: 5),
+                                                      Text(
+                                                        "17.2 km away.",
+                                                        style: GoogleFonts.lato(
+                                                          textStyle: const TextStyle(
+                                                              color:
+                                                                  kBlackSubHeadingColor,
+                                                              fontSize: 10,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )
+                                                ]),
+                                          ),
+                                          SizedBox(
+                                            height: 25,
+                                            width: 90,
+                                            child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                children: [
+                                                  Text(
+                                                    "864 Reviews",
+                                                    style: GoogleFonts.lato(
+                                                      textStyle: const TextStyle(
+                                                          color:
+                                                              kBlackSubHeadingColor,
+                                                          fontSize: 10,
+                                                          overflow: TextOverflow
+                                                              .ellipsis),
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 1,
+                                                  ),
+                                                  Text(
+                                                    "Deliver in 5 minutes",
+                                                    style: GoogleFonts.lato(
+                                                      textStyle: const TextStyle(
+                                                          color:
+                                                              kBlackSubHeadingColor,
+                                                          fontSize: 10,
+                                                          overflow: TextOverflow
+                                                              .ellipsis),
+                                                    ),
+                                                  ),
+                                                ]),
+                                          ),
+                                        ])
+                                      ],
+                                    ))),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                          ],
+                        );
+                      },
+                      itemCount: 5,
+                    ),
+                  )),
             ],
           )),
         )
@@ -176,7 +616,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: size.height * .12,
+                height: size.height * .13,
                 alignment: Alignment.bottomLeft,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -279,7 +719,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(
-                height: size.height * .63,
+                height: size.height * .6,
                 child: Padding(
                   child: SingleChildScrollView(
                     child: Column(
