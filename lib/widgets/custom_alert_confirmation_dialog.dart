@@ -13,6 +13,7 @@ class CustomAlertConfirmationDialog extends StatelessWidget {
   final String titleText;
   final double dialogHeight;
   final String icon;
+  final bool isSvg;
 
   const CustomAlertConfirmationDialog(
       {Key? key,
@@ -21,14 +22,14 @@ class CustomAlertConfirmationDialog extends StatelessWidget {
       this.descText = "Desc will be here.",
       this.titleText = "Title Space",
       this.dialogHeight = 270,
-      this.icon = "assets/graphics/images/forget_circle_img.svg"})
+      this.icon = "assets/graphics/images/img_okay_fill_icon.svg",
+      this.isSvg = false})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.0)), //this right here
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)), //this right here
       child: SizedBox(
         height: dialogHeight,
         child: Padding(
@@ -51,7 +52,7 @@ class CustomAlertConfirmationDialog extends StatelessWidget {
               const SizedBox(
                 height: 12,
               ),
-              SvgPicture.asset(icon),
+              isSvg ? SvgPicture.asset(icon) : Image.asset(icon),
               const SizedBox(
                 height: 12,
               ),
@@ -61,7 +62,8 @@ class CustomAlertConfirmationDialog extends StatelessWidget {
                     textStyle: const TextStyle(
                   color: kBlackSubHeadingColor,
                 )),
-                minFontSize: 8,
+                maxFontSize: 10,
+                minFontSize: 6,
                 maxLines: 2,
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
