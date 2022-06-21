@@ -12,6 +12,8 @@ import 'package:venuedash2/routers/privacy_policy_page.dart';
 import 'package:venuedash2/routers/profile_edit_page.dart';
 import 'package:venuedash2/routers/settings_page.dart';
 import 'package:venuedash2/routers/subscription_page.dart';
+import 'package:venuedash2/routers/venue_category_page.dart';
+import 'package:venuedash2/routers/venue_menu_detail_page.dart';
 import 'package:venuedash2/utils/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:venuedash2/widgets/custom_action_dialog.dart';
@@ -199,7 +201,7 @@ class _HomePageState extends State<HomePage> {
                             borderRadius: BorderRadius.all(Radius.circular(8)),
                           ),
                           child: InkWell(
-                              onTap: () {},
+                              onTap: () => Get.to(() => const VenueCategoryPage()),
                               borderRadius: const BorderRadius.all(Radius.circular(8)),
                               child: SizedBox(
                                   child: Column(
@@ -209,11 +211,8 @@ class _HomePageState extends State<HomePage> {
                                     flex: 5,
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(vertical: 8),
-                                      child: InkWell(
-                                        onTap: () {},
-                                        child: Image.asset(
-                                          "assets/graphics/venue_category_icon_2.png",
-                                        ),
+                                      child: Image.asset(
+                                        "assets/graphics/venue_category_icon_2.png",
                                       ),
                                     ),
                                   ),
@@ -264,105 +263,106 @@ class _HomePageState extends State<HomePage> {
                     return Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Ink(
-                            width: 200,
-                            height: 200,
-                            padding: const EdgeInsets.all(10),
-                            decoration: const BoxDecoration(
-                              color: kLoationFiedlBgColor,
-                              borderRadius: BorderRadius.all(Radius.circular(16)),
-                            ),
-                            child: InkWell(
-                                onTap: () {},
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(16),
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+                        InkWell(
+                          onTap: () => Get.to(() => const VenueMenuDetailPage()),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(16),
+                          ),
+                          child: Ink(
+                              width: 200,
+                              height: 200,
+                              padding: const EdgeInsets.all(10),
+                              decoration: const BoxDecoration(
+                                color: kLoationFiedlBgColor,
+                                borderRadius: BorderRadius.all(Radius.circular(16)),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: 130,
+                                    width: 190,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset("assets/graphics/Rectangle 583.png"),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 3),
+                                  Text("Venue Dash Business",
+                                      textAlign: TextAlign.start,
+                                      style: GoogleFonts.lato(
+                                          textStyle: const TextStyle(
+                                        color: kBlackHeadingColor,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      ))),
+                                  const SizedBox(
+                                    height: 2,
+                                  ),
+                                  Row(children: [
                                     SizedBox(
-                                      height: 130,
-                                      width: 190,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: Image.asset("assets/graphics/Rectangle 583.png"),
-                                      ),
-                                    ),
-                                    const SizedBox(height: 3),
-                                    Text("Venue Dash Business",
-                                        textAlign: TextAlign.start,
-                                        style: GoogleFonts.lato(
-                                            textStyle: const TextStyle(
-                                          color: kBlackHeadingColor,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                        ))),
-                                    const SizedBox(
-                                      height: 2,
-                                    ),
-                                    Row(children: [
-                                      SizedBox(
-                                        height: 25,
-                                        //color: Colors.yellow,
-                                        width: 90,
-                                        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                                          Row(
-                                            children: [
-                                              Image.asset("assets/graphics/Icon ionic-ios-star.png"),
-                                              const SizedBox(width: 5),
-                                              Text(
-                                                "3.1 Rating",
-                                                style: GoogleFonts.lato(
-                                                  textStyle: const TextStyle(
-                                                      color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
-                                                ),
+                                      height: 25,
+                                      //color: Colors.yellow,
+                                      width: 90,
+                                      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                                        Row(
+                                          children: [
+                                            Image.asset("assets/graphics/ic_rating_star_yellow_icon.png"),
+                                            const SizedBox(width: 5),
+                                            Text(
+                                              "3.1 Rating",
+                                              style: GoogleFonts.lato(
+                                                textStyle: const TextStyle(
+                                                    color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                               ),
-                                            ],
-                                          ),
-                                          const SizedBox(
-                                            height: 1,
-                                          ),
-                                          Row(
-                                            children: [
-                                              Image.asset("assets/graphics/distance.png"),
-                                              const SizedBox(width: 5),
-                                              Text(
-                                                "17.2 km away.",
-                                                style: GoogleFonts.lato(
-                                                  textStyle: const TextStyle(
-                                                      color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
-                                                ),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(
+                                          height: 1,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Image.asset("assets/graphics/ic_distance_green_icon.png"),
+                                            const SizedBox(width: 5),
+                                            Text(
+                                              "17.2 km away.",
+                                              style: GoogleFonts.lato(
+                                                textStyle: const TextStyle(
+                                                    color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                               ),
-                                            ],
-                                          )
-                                        ]),
-                                      ),
-                                      SizedBox(
-                                        height: 25,
-                                        width: 90,
-                                        child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-                                          Text(
-                                            "864 Reviews",
-                                            style: GoogleFonts.lato(
-                                              textStyle:
-                                                  const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                             ),
+                                          ],
+                                        )
+                                      ]),
+                                    ),
+                                    SizedBox(
+                                      height: 25,
+                                      width: 90,
+                                      child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                                        Text(
+                                          "864 Reviews",
+                                          style: GoogleFonts.lato(
+                                            textStyle:
+                                                const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                           ),
-                                          const SizedBox(
-                                            height: 1,
+                                        ),
+                                        const SizedBox(
+                                          height: 1,
+                                        ),
+                                        Text(
+                                          "Deliver in 5 minutes",
+                                          style: GoogleFonts.lato(
+                                            textStyle:
+                                                const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                           ),
-                                          Text(
-                                            "Deliver in 5 minutes",
-                                            style: GoogleFonts.lato(
-                                              textStyle:
-                                                  const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
-                                            ),
-                                          ),
-                                        ]),
-                                      ),
-                                    ])
-                                  ],
-                                ))),
+                                        ),
+                                      ]),
+                                    ),
+                                  ])
+                                ],
+                              )),
+                        ),
                         const SizedBox(
                           width: 10,
                         ),
@@ -442,7 +442,7 @@ class _HomePageState extends State<HomePage> {
                                         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                                           Row(
                                             children: [
-                                              Image.asset("assets/graphics/Icon ionic-ios-star.png"),
+                                              Image.asset("assets/graphics/ic_rating_star_yellow_icon.png"),
                                               const SizedBox(width: 5),
                                               Text(
                                                 "3.1 Rating",
@@ -458,7 +458,7 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                           Row(
                                             children: [
-                                              Image.asset("assets/graphics/distance.png"),
+                                              Image.asset("assets/graphics/ic_distance_green_icon.png"),
                                               const SizedBox(width: 5),
                                               Text(
                                                 "17.2 km away.",
