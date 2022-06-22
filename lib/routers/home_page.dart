@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:venuedash2/controller/text_controller.dart';
+import 'package:venuedash2/routers/add_to_cart_page.dart';
 import 'package:venuedash2/routers/feedback_page.dart';
 import 'package:venuedash2/routers/help_page.dart';
 import 'package:venuedash2/routers/location_edit_page.dart';
@@ -64,7 +65,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () => Get.to(() => const AddToCartPage()),
             child: Image.asset(
               "assets/graphics/ic_add_to_cart_icon.png",
             ),
@@ -82,11 +83,11 @@ class _HomePageState extends State<HomePage> {
                 style: GoogleFonts.lato(
                     textStyle: const TextStyle(
                   color: kBlackHeadingColor,
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ))),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           Ink(
             width: size.width * .9,
             decoration: const BoxDecoration(
@@ -112,10 +113,7 @@ class _HomePageState extends State<HomePage> {
                               child: Text(widget.textControllerGet.controllerTextValue.value,
                                   style: GoogleFonts.lato(
                                       textStyle: const TextStyle(
-                                          color: kBlackHeadingColor,
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.normal,
-                                          overflow: TextOverflow.ellipsis)))),
+                                          color: kBlackHeadingColor, fontSize: 15, fontWeight: FontWeight.normal, overflow: TextOverflow.ellipsis)))),
                         ),
                       ],
                     ),
@@ -312,8 +310,8 @@ class _HomePageState extends State<HomePage> {
                                             Text(
                                               "3.1 Rating",
                                               style: GoogleFonts.lato(
-                                                textStyle: const TextStyle(
-                                                    color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
+                                                textStyle:
+                                                    const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                               ),
                                             ),
                                           ],
@@ -328,8 +326,8 @@ class _HomePageState extends State<HomePage> {
                                             Text(
                                               "17.2 km away.",
                                               style: GoogleFonts.lato(
-                                                textStyle: const TextStyle(
-                                                    color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
+                                                textStyle:
+                                                    const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                               ),
                                             ),
                                           ],
@@ -343,8 +341,7 @@ class _HomePageState extends State<HomePage> {
                                         Text(
                                           "864 Reviews",
                                           style: GoogleFonts.lato(
-                                            textStyle:
-                                                const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
+                                            textStyle: const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                           ),
                                         ),
                                         const SizedBox(
@@ -353,8 +350,7 @@ class _HomePageState extends State<HomePage> {
                                         Text(
                                           "Deliver in 5 minutes",
                                           style: GoogleFonts.lato(
-                                            textStyle:
-                                                const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
+                                            textStyle: const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                           ),
                                         ),
                                       ]),
@@ -447,8 +443,8 @@ class _HomePageState extends State<HomePage> {
                                               Text(
                                                 "3.1 Rating",
                                                 style: GoogleFonts.lato(
-                                                  textStyle: const TextStyle(
-                                                      color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
+                                                  textStyle:
+                                                      const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                                 ),
                                               ),
                                             ],
@@ -463,8 +459,8 @@ class _HomePageState extends State<HomePage> {
                                               Text(
                                                 "17.2 km away.",
                                                 style: GoogleFonts.lato(
-                                                  textStyle: const TextStyle(
-                                                      color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
+                                                  textStyle:
+                                                      const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                                 ),
                                               ),
                                             ],
@@ -478,8 +474,7 @@ class _HomePageState extends State<HomePage> {
                                           Text(
                                             "864 Reviews",
                                             style: GoogleFonts.lato(
-                                              textStyle:
-                                                  const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
+                                              textStyle: const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                             ),
                                           ),
                                           const SizedBox(
@@ -488,8 +483,7 @@ class _HomePageState extends State<HomePage> {
                                           Text(
                                             "Deliver in 5 minutes",
                                             style: GoogleFonts.lato(
-                                              textStyle:
-                                                  const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
+                                              textStyle: const TextStyle(color: kBlackSubHeadingColor, fontSize: 10, overflow: TextOverflow.ellipsis),
                                             ),
                                           ),
                                         ]),
