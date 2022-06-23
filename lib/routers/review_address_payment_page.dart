@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import "package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -8,6 +7,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:venuedash2/controller/text_controller.dart';
 import 'package:venuedash2/routers/add_payment_method_page.dart';
 import 'package:venuedash2/routers/location_edit_page.dart';
+import 'package:venuedash2/routers/venue_order_page.dart';
 import 'package:venuedash2/utils/constants.dart';
 import 'package:venuedash2/widgets/outlined_border_button_long.dart';
 import 'package:venuedash2/widgets/rounded_button_long.dart';
@@ -84,7 +84,7 @@ class _ReviewAddressPaymentPageState extends State<ReviewAddressPaymentPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    BitmapDescriptor.fromAssetImage(const ImageConfiguration(size: Size(12, 12)), 'assets/graphics/ic_customer_location_icon.png').then((icon) {
+    BitmapDescriptor.fromAssetImage(const ImageConfiguration(size: Size(12, 12)), 'assets/graphics/ic_driver_location_icon.png').then((icon) {
       markerIcon = icon;
     });
     return Scaffold(
@@ -347,7 +347,7 @@ class _ReviewAddressPaymentPageState extends State<ReviewAddressPaymentPage> {
               RoundedButtonLong(
                 text: "Place Order",
                 press: () => {
-                  Get.back(),
+                  Get.to(const VenueOrderPage())
                 },
                 buttonWidth: .9,
                 textColor: Colors.white,
