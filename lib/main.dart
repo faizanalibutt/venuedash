@@ -6,11 +6,11 @@ import 'package:venuedash2/routers/welcome_page.dart';
 void main() => runApp(const VenueDash());
 
 class VenueDash extends StatelessWidget {
-  const VenueDash({Key? key}) : super(key: key); 
+  const VenueDash({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
+    return const GetMaterialApp(debugShowCheckedModeBanner: false, home: WelcomePage());
   }
 }

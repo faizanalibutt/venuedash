@@ -82,10 +82,9 @@ class ProfileEditPage extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.only(left: 20),
                   alignment: Alignment.topLeft,
-                  child: const Text(
+                  child: Text(
                     "Full Name",
-                    style:
-                        TextStyle(color: kBlackSubHeadingColor, fontSize: 10),
+                    style: GoogleFonts.lato(textStyle: const TextStyle(color: kBlackSubHeadingColor, fontSize: 10)),
                   ),
                 ),
                 RoundedInputField(
@@ -99,10 +98,9 @@ class ProfileEditPage extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.only(left: 20),
                   alignment: Alignment.topLeft,
-                  child: const Text(
+                  child: Text(
                     "Email",
-                    style:
-                        TextStyle(color: kBlackSubHeadingColor, fontSize: 10),
+                    style: GoogleFonts.lato(textStyle: const TextStyle(color: kBlackSubHeadingColor, fontSize: 10)),
                   ),
                 ),
                 RoundedInputField(

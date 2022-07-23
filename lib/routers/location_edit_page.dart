@@ -43,10 +43,7 @@ class _LocationEditPageState extends State<LocationEditPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    BitmapDescriptor.fromAssetImage(
-            const ImageConfiguration(size: Size(12, 12)),
-            'assets/graphics/ic_location_mark_icon.png')
-        .then((icon) {
+    BitmapDescriptor.fromAssetImage(const ImageConfiguration(size: Size(12, 12)), 'assets/graphics/ic_location_mark_icon.png').then((icon) {
       markerIcon = icon;
     });
     return Scaffold(
@@ -130,8 +127,7 @@ class _LocationEditPageState extends State<LocationEditPage> {
                                 enableUserLocation();
                               },
                               child: Container(
-                                padding:
-                                    const EdgeInsets.only(top: 3, right: 0),
+                                padding: const EdgeInsets.only(top: 3, right: 0),
                                 child: Image.asset(
                                   "assets/graphics/ic_current_location_icon.png",
                                 ),
@@ -145,16 +141,14 @@ class _LocationEditPageState extends State<LocationEditPage> {
                     height: size.height * .03,
                   ),
                   Container(
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black12,
-                            spreadRadius: 4,
-                            blurRadius: 14,
-                            offset: Offset(0, 3),
-                          )
-                        ]),
+                    decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(30.0)), boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        spreadRadius: 4,
+                        blurRadius: 14,
+                        offset: Offset(0, 3),
+                      )
+                    ]),
                     height: size.height * .5,
                     width: size.width * .9,
                     child: ClipRRect(
@@ -195,8 +189,7 @@ class _LocationEditPageState extends State<LocationEditPage> {
   void svgParser() {
     final SvgParser parser = SvgParser();
     try {
-      parser.parse("assets/graphics/images/ic_current_location_icon.svg",
-          warningsAsErrors: false);
+      parser.parse("assets/graphics/images/ic_current_location_icon.svg", warningsAsErrors: false);
       if (kDebugMode) print('SVG is supported');
     } catch (e) {
       if (kDebugMode) print('SVG contains unsupported features');
@@ -222,9 +215,7 @@ class _LocationEditPageState extends State<LocationEditPage> {
       }
     }
     _serviceEnabled = true;
-    if (!_serviceEnabled ||
-        _permissionGranted == PermissionStatus.denied ||
-        _permissionGranted == PermissionStatus.grantedLimited) {
+    if (!_serviceEnabled || _permissionGranted == PermissionStatus.denied || _permissionGranted == PermissionStatus.grantedLimited) {
       Get.dialog(
           CustomAlertDialog(
               description: "You denied location permission or allowed for "
@@ -273,8 +264,7 @@ class _LocationEditPageState extends State<LocationEditPage> {
               if (kDebugMode) print("getProfile Called");
               Get.dialog(
                   CustomAlertDialog(
-                      description:
-                          "You denied location permission for forever. You need to allow permission to use this service.",
+                      description: "You denied location permission for forever. You need to allow permission to use this service.",
                       onOkPressed: () async {
                         Get.back();
                         await Geolocator.openAppSettings();
@@ -297,8 +287,7 @@ class _LocationEditPageState extends State<LocationEditPage> {
               if (kDebugMode) print("getProfile Called");
               Get.dialog(
                   CustomAlertDialog(
-                      description:
-                          "You denied location permission for forever. You need to allow permission to use this service.",
+                      description: "You denied location permission for forever. You need to allow permission to use this service.",
                       onOkPressed: () async {
                         Get.back();
                         await Geolocator.openAppSettings();

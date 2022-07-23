@@ -31,8 +31,7 @@ class LocationSetUpPage extends StatelessWidget {
                 child: Text(
                   "Set your Location",
                   style: GoogleFonts.lato(
-                    textStyle: const TextStyle(
-                        color: kBlackHeadingColor, fontSize: 24),
+                    textStyle: const TextStyle(color: kBlackHeadingColor, fontSize: 24),
                   ),
                 ),
               )),
@@ -43,8 +42,7 @@ class LocationSetUpPage extends StatelessWidget {
               "Explore venues and shops near you by using your current "
               "location or searching a location manually.",
               style: GoogleFonts.lato(
-                textStyle:
-                    const TextStyle(color: kBlackSubHeadingColor, fontSize: 12),
+                textStyle: const TextStyle(color: kBlackSubHeadingColor, fontSize: 12),
               ),
               minFontSize: 8,
               maxLines: 2,
@@ -60,8 +58,7 @@ class LocationSetUpPage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SvgPicture.asset(
-                      "assets/graphics/images/location_set_up_img.svg"),
+                  SvgPicture.asset("assets/graphics/images/location_set_up_img.svg"),
                   SizedBox(
                     height: size.height * .05,
                   ),
@@ -74,9 +71,8 @@ class LocationSetUpPage extends StatelessWidget {
                     cursorColor: Colors.black,
                     hintText: "Search Manually...",
                     textController: locationController.textController,
-                    fieldIconCallback: () => Get.to(const LocationConfirmPage(),
-                        transition: Transition.native,
-                        duration: const Duration(milliseconds: 500)),
+                    fieldIconCallback: () =>
+                        Get.to(const LocationConfirmPage(), transition: Transition.native, duration: const Duration(milliseconds: 500)),
                   ),
                   Row(
                     children: [
@@ -97,11 +93,10 @@ class LocationSetUpPage extends StatelessWidget {
                             color: kBlackColor30,
                             height: 1,
                           )),
-                      const Text(
-                        "OR",
-                        style: TextStyle(
-                            color: kBlackColor30, fontWeight: FontWeight.w400),
-                      ),
+                      Text("OR",
+                          style: GoogleFonts.lato(
+                            textStyle: const TextStyle(color: kBlackColor30),
+                          )),
                       Container(
                           height: 80.0,
                           width: size.width * .25,
@@ -123,9 +118,8 @@ class LocationSetUpPage extends StatelessWidget {
                   ),
                   RoundedButtonLong(
                     text: "Use My Current Location",
-                    press: () => Get.to(() => const LocationConfirmPage(),
-                        transition: Transition.native,
-                        duration: const Duration(milliseconds: 500)),
+                    press: () =>
+                        Get.to(() => const LocationConfirmPage(), transition: Transition.native, duration: const Duration(milliseconds: 500)),
                     imgName: 'assets/graphics/ic_location_gps_icon.png',
                     color: kPrimaryColor,
                     textColor: Colors.white,
